@@ -9,24 +9,16 @@ type RepositoryProps = {
 };
 
 const fetchPublicRepos = async () => {
-  const storedRepos = sessionStorage.getItem("repos");
-  if (storedRepos) {
-    return JSON.parse(storedRepos);
-  }
-
   try {
-    const response = await axios.get("https://api.github.com/user/repos", {
-      headers: {
-        Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-      },
-      params: {
-        type: "public",
-      },
-    });
-    const data = response.data;
-    console.log(data);
-    sessionStorage.setItem("repos", JSON.stringify(data));
-    return data;
+    const response = await axios.get(
+      `https://api.github.com/users/CartValderama/repos`,
+      {
+        params: {
+          type: "public",
+        },
+      }
+    );
+    return response.data;
   } catch (error) {
     console.error("Error fetching repositories:", error);
     throw error;
