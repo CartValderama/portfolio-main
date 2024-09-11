@@ -24,6 +24,7 @@ const fetchPublicRepos = async () => {
       },
     });
     const data = response.data;
+    console.log(data);
     sessionStorage.setItem("repos", JSON.stringify(data));
     return data;
   } catch (error) {
