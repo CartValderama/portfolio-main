@@ -9,11 +9,6 @@ type RepositoryProps = {
 };
 
 const fetchPublicRepos = async () => {
-  const storedRepos = sessionStorage.getItem("repos");
-  if (storedRepos) {
-    return JSON.parse(storedRepos);
-  }
-
   try {
     const response = await axios.get(
       `https://api.github.com/users/CartValderama/repos`,
@@ -23,9 +18,7 @@ const fetchPublicRepos = async () => {
         },
       }
     );
-    const data = response.data;
-    sessionStorage.setItem("repos", JSON.stringify(data));
-    return data;
+    return response.data;
   } catch (error) {
     console.error("Error fetching repositories:", error);
     throw error;
