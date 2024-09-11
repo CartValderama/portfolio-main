@@ -1,36 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-
-type RepositoryProps = {
-  id: number;
-  name: string;
-  description?: string;
-  html_url: string;
-};
-
-const fetchPublicRepos = async () => {
-  try {
-    const response = await axios.get(
-      `https://api.github.com/users/CartValderama/repos`,
-      {
-        params: {
-          type: "public",
-        },
-      }
-    );
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching repositories:", error);
-    throw error;
-  }
-};
+import { fetchPublicRepos } from "../data/fetchPublicRepo";
+import { RepositoryProps } from "../types/repository";
 
 export default function ExpAndProj() {
   const {
     isLoading,
     error,
     data: repos,
-  } = useQuery({
+  } = useQuery<RepositoryProps[]>({
     queryFn: () => fetchPublicRepos(),
     queryKey: ["repos"],
   });
@@ -42,7 +19,7 @@ export default function ExpAndProj() {
     <div>
       <h1>Experience and Projects</h1>
       <ul>
-        {repos?.map((repo: RepositoryProps) => (
+        {repos?.map((repo) => (
           <li key={repo.id}>
             <p>{repo.name}</p>
             <p>{repo.html_url}</p>
