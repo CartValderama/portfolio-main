@@ -12,7 +12,7 @@ export default function Experience() {
           <motion.div
             key={idx}
             className="bg-zinc-50 py-4 px-6 rounded-md flex flex-col gap-y-3"
-            variants={fadeInAnimationVariants}
+            variants={fadeInAnimationVariants("x", 100, 0)}
             initial="initial"
             animate="animate"
             custom={idx}

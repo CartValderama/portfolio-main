@@ -5,4 +5,5 @@ export type RepositoryProps = {
   html_url: string;
   homepage?: string;
   language: string;
+  topics?: string[];
 };

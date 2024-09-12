@@ -16,7 +16,7 @@ export default function Skills() {
             <motion.li
               className="w-16 md:w-auto text-xs sm:text-sm py-4 flex flex-col items-center gap-2 rounded-sm "
               key={idx}
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("x", -100, 0)}
               initial="initial"
               animate="animate"
               custom={idx}
@@ -35,7 +35,7 @@ export default function Skills() {
             <motion.li
               className="py-2 rounded-sm"
               key={idx}
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("x", -100, 0)}
               initial="initial"
               animate="animate"
               custom={idx}

@@ -9,19 +9,37 @@ export default function Contacts() {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
     >
-      <h1 className="hidden">Contacts</h1>
-      <div>
-        <h2 className="font-medium mb-1">E-mail</h2>
-        <p>cartantonio2000@gmail.com</p>
-      </div>
+      <h2 className="hidden">Contacts</h2>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
+        <h3 className="font-medium mb-1">E-mail</h3>
+        <p className="truncate">cartantonio2000@gmail.com</p>
+      </motion.div>
 
-      <div>
-        <h2 className="font-medium mb-1">Phone no.</h2>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.125,
+        }}
+      >
+        <h3 className="font-medium mb-1">Phone no.</h3>
         <p>+47 908 83 637</p>
-      </div>
+      </motion.div>
 
-      <div>
-        <h2 className="font-medium mb-1">Socials</h2>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.15,
+        }}
+      >
+        <h3 className="font-medium mb-1">Socials</h3>
         <div className="flex gap-3">
           <a
             href=""
@@ -40,9 +58,16 @@ export default function Contacts() {
             <span>LinkedIn</span>
           </a>
         </div>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1">Resume</h2>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.175,
+        }}
+      >
+        <h3 className="font-medium mb-1">Resume</h3>
         <a
           href=""
           className="flex gap-1 items-center hover:text-stone-500 transition-all"
@@ -50,7 +75,7 @@ export default function Contacts() {
           <BiDownload />
           <span>resume.pdf</span>
         </a>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

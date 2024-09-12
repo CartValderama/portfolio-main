@@ -14,17 +14,26 @@ export default function Projects({ repos }: ProjectsProps) {
     <div className="flex flex-col gap-y-3">
       <h2 className="font-semibold">Notable Projects</h2>
       {repos?.map(
-        ({ id, name, description, html_url, homepage, language }, idx) => (
+        (
+          { id, name, description, html_url, homepage, language, topics },
+          idx
+        ) => (
           <motion.div
             key={id}
-            className="bg-zinc-50 py-4 px-6 flex flex-col gap-y-4"
-            variants={fadeInAnimationVariants}
+            className="bg-zinc-50 rounded-md py-4 px-6 flex flex-col gap-y-6"
+            variants={fadeInAnimationVariants("x", 100, 0)}
             initial="initial"
             animate="animate"
             custom={idx}
           >
             <div className="flex justify-between items-baseline gap-x-4 ">
-              <h3 className="capitalize text-xl font-medium">{name}</h3>
+              <div className="flex flex-col items-start gap-y-1">
+                <h3 className="capitalize text-xl font-medium">{name}</h3>
+                <p className="text-sm font-thin text-secondary capitalize flex gap-x-1 items-center">
+                  Predominantly: {language}
+                </p>
+              </div>
+
               <div className="flex gap-x-3 text-sm text-secondary">
                 <a
                   href={html_url}
@@ -48,21 +57,26 @@ export default function Projects({ repos }: ProjectsProps) {
             </div>
 
             <div className="flex flex-col items-start gap-y-4">
-              <p className="w-4/6">
+              <p className="md:w-3/4">
                 {description
                   ? description
                   : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, laboriosam est libero facilis debitis commodi itaque eveniet numquam unde reiciendis"}
               </p>
-              <p
-                className={`text-xs px-3 py-1 text-white rounded-full`}
-                style={{
-                  backgroundColor: language
-                    ? colorChecker(language)
-                    : "#57534e",
-                }}
-              >
-                {language}
-              </p>
+              <ul className="flex gap-2 flex-wrap">
+                {topics?.map((topic, idx) => (
+                  <li
+                    key={idx}
+                    className="text-xs text-white px-2 py-1 font-thin rounded"
+                    style={{
+                      backgroundColor: language
+                        ? colorChecker(language)
+                        : "#57534e",
+                    }}
+                  >
+                    {topic}
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         )
