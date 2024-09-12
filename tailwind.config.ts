@@ -5,7 +5,11 @@ export default {
     extend: {
       textColor: {
         primary: "#46423f",
-        secondary: "#55514e",
+        secondary: "#8A817C",
+      },
+      backgroundColor: {
+        primary: "#f9fafb",
+        secondary: "#fefefe",
       },
     },
   },

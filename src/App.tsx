@@ -7,13 +7,15 @@ const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <main className="bg-background">
-      <AboutMe />
-      <div className="flex">
-        <Skills />
-        <QueryClientProvider client={queryClient}>
-          <ExpAndProj />
-        </QueryClientProvider>
+    <main className="max-w-5xl m-auto my-5 text-primary">
+      <div className="flex flex-col gap-1 md:gap-2">
+        <AboutMe />
+        <div className="flex flex-col md:flex-row gap-1">
+          <Skills />
+          <QueryClientProvider client={queryClient}>
+            <ExpAndProj />
+          </QueryClientProvider>
+        </div>
       </div>
     </main>
   );
