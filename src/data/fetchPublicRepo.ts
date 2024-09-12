@@ -19,7 +19,6 @@ export const fetchPublicRepos = async (
         },
       }
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching repositories:", error);

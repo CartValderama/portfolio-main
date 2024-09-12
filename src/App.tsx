@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AboutMe from "./layouts/AboutMe";
-import ExpAndProj from "./layouts/ProjAndEduc";
+import ProjAndEduc from "./layouts/ProjAndEduc";
 import Skills from "./layouts/Skills";
 
 const queryClient = new QueryClient();
@@ -13,7 +13,7 @@ export default function App() {
         <div className="flex flex-col md:flex-row gap-3">
           <Skills />
           <QueryClientProvider client={queryClient}>
-            <ExpAndProj />
+            <ProjAndEduc />
           </QueryClientProvider>
         </div>
       </div>
