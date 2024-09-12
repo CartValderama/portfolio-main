@@ -9,7 +9,7 @@ import Projects from "../components/Projects";
 export default function ExpAndProj() {
   const [isProjects, setIsProjects] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const reposPerPage = 4;
+  const reposPerPage = 3;
   const {
     isLoading,
     error,
