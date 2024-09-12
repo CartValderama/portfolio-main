@@ -11,7 +11,7 @@ interface ProjectsProps {
 
 export default function Projects({ repos }: ProjectsProps) {
   return (
-    <div className="flex flex-col gap-y-3">
+    <div className="flex flex-col gap-y-6">
       <h2 className="font-semibold">Notable Projects</h2>
       {repos?.map(
         (
@@ -29,28 +29,36 @@ export default function Projects({ repos }: ProjectsProps) {
             <div className="flex justify-between items-baseline gap-x-4 ">
               <div className="flex flex-col items-start gap-y-1">
                 <h3 className="capitalize text-xl font-medium">{name}</h3>
-                <p className="text-sm font-thin text-secondary capitalize flex gap-x-1 items-center">
-                  Predominantly: {language}
+                <p className="text-sm font-light text-secondary capitalize flex gap-x-1 items-center">
+                  Predominantly:{" "}
+                  <span
+                    className="font-normal"
+                    style={{
+                      color: language ? colorChecker(language) : "#57534e",
+                    }}
+                  >
+                    {language}
+                  </span>
                 </p>
               </div>
 
-              <div className="flex gap-x-3 text-sm text-secondary">
+              <div className="flex gap-x-3 text-sm">
                 <a
                   href={html_url}
                   target="_blank"
-                  className="flex gap-x-1 items-center"
+                  className="flex gap-x-1 items-center hover:underline transition-all"
                 >
                   <FaGithub />
-                  <span className="capitalize hidden md:block">github</span>
+                  <span className="capitalize hidden sm:block">repository</span>
                 </a>
                 {homepage && (
                   <a
                     href={homepage}
                     target="_blank"
-                    className="flex gap-x-1 items-center"
+                    className="flex gap-x-1 items-center hover:underline transition-all"
                   >
                     <RxOpenInNewWindow />
-                    <span className="capitalize hidden md:block">website</span>
+                    <span className="capitalize hidden sm:block">website</span>
                   </a>
                 )}
               </div>

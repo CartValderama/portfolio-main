@@ -9,8 +9,11 @@ export default function Skills() {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
-      <div className="bg-secondary border p-8 rounded-md flex flex-col gap-y-4">
-        <h1 className="capitalize font-bold text-xl">Tech Stack</h1>
+      <h1 className="bg-secondary border py-4 px-8 text-lg sm:text-2xl font-bold md:rounded-t-md">
+        Skills
+      </h1>
+      <div className="bg-secondary border py-4 px-8 flex flex-col gap-y-4">
+        <h2 className="capitalize font-semibold">Tech Stack</h2>
         <ul className="grid grid-cols-4 md:grid-cols-2 gap-y-2 gap-x-7">
           {techStack.map(({ skill, icon }, idx) => (
             <motion.li
@@ -28,8 +31,8 @@ export default function Skills() {
           ))}
         </ul>
       </div>
-      <div className="bg-secondary border p-8 rounded-md flex flex-col gap-y-4">
-        <h1 className="capitalize font-bold text-xl">language</h1>
+      <div className="bg-secondary border py-4 px-8 md:rounded-b-md flex flex-col gap-y-4">
+        <h2 className="capitalize font-semibold">language</h2>
         <ul className="flex flex-wrap gap-y-2 gap-x-7">
           {languages.map((language, idx) => (
             <motion.li

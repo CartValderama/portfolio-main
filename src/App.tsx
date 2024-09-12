@@ -8,9 +8,9 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <main className="max-w-5xl m-auto my-5 text-primary">
-      <div className="flex flex-col gap-1 md:gap-2">
+      <div className="flex flex-col gap-3">
         <AboutMe />
-        <div className="flex flex-col md:flex-row gap-1">
+        <div className="flex flex-col md:flex-row gap-3">
           <Skills />
           <QueryClientProvider client={queryClient}>
             <ExpAndProj />

@@ -48,74 +48,95 @@ export default function ExpAndProj() {
 
   return (
     <motion.section
-      className="border rounded-md bg-secondary flex flex-col justify-between w-full p-8 overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
       ref={sectionRef}
+      className="flex flex-col gap-1 w-full "
     >
-      <div className="flex flex-col gap-y-10">
-        <h1 className="hidden">Experience and Projects</h1>
-        <div className="flex gap-x-10">
-          <button
-            onClick={() => {
-              setIsProjects(true);
-              setCurrentPage(1); // Optional: Reset page to 1 when switching to Projects
-            }}
-            className={`text-xl font-bold hover:text-secondary ${
-              isProjects && "underline"
-            }`}
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => {
-              setIsProjects(false);
-              setCurrentPage(1); // Optional: Reset page to 1 when switching to Experience
-            }}
-            className={`text-xl font-bold hover:text-secondary ${
-              !isProjects && "underline"
-            }`}
-          >
-            Experience
-          </button>
+      <motion.div
+        className="border bg-secondary flex justify-between items-end py-4 px-8 md:rounded-t-md"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
+        <h1 className="text-lg sm:text-2xl font-bold flex flex-wrap mr-5">
+          Projects & Education
+        </h1>
+        <div className="flex">
+          <div className="flex text-xs md:text-normal" role="group">
+            <button
+              onClick={() => {
+                setIsProjects(true);
+                setCurrentPage(1);
+              }}
+              className={`px-2 sm:px-4 py-1 border lg:w-[7rem] rounded-tl-md  transition-all ${
+                isProjects
+                  ? "bg-stone-700 text-white font-bold border-r-0"
+                  : "bg-white hover:font-bold hover:bg-stone-400 hover:text-white"
+              }`}
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => {
+                setIsProjects(false);
+                setCurrentPage(1);
+              }}
+              className={`px-2 sm:px-4 py-1 border lg:w-[7rem] rounded-tr-md  transition-all ${
+                !isProjects
+                  ? "bg-stone-700 text-white font-bold border-l-0"
+                  : "bg-white hover:font-bold hover:bg-stone-400 hover:text-white"
+              }`}
+            >
+              Education
+            </button>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="border bg-secondary flex flex-col justify-between py-4 px-8 md:rounded-b-md">
+        <div className="flex flex-col gap-y-10">
+          {!isProjects ? <Experience /> : <Projects repos={repos ?? []} />}
         </div>
 
-        {!isProjects ? <Experience /> : <Projects repos={repos ?? []} />}
+        {isProjects && (
+          <div className="flex justify-between items-center mt-12 space-x-2">
+            <button
+              onClick={() => {
+                setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+              }}
+              disabled={currentPage === 1}
+              className={`py-1 px-3 bg-stone-600 text-white rounded-md w-20 ${
+                currentPage !== 1
+                  ? "hover:font-bold hover:bg-stone-400"
+                  : "opacity-0"
+              } transition-all`}
+            >
+              Prev
+            </button>
+            <p className="text-sm">
+              <i>
+                Page {currentPage} of {3}
+              </i>
+            </p>
+            <button
+              onClick={() => {
+                setCurrentPage((prevPage) => Math.min(prevPage + 1, 3));
+              }}
+              disabled={currentPage === 3}
+              className={`py-1 px-3 bg-stone-600 text-white rounded-md w-20 ${
+                currentPage !== 3
+                  ? "hover:font-bold hover:bg-stone-400"
+                  : "opacity-0"
+              } transition-all`}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
-
-      {isProjects && (
-        <div className="flex justify-between items-center mt-4 space-x-2">
-          <button
-            onClick={() => {
-              setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-            }}
-            disabled={currentPage === 1}
-            className={`py-1 px-3 bg-slate-50 rounded-md w-20 ${
-              currentPage !== 1
-                ? "hover:font-bold hover:bg-slate-100"
-                : "opacity-0"
-            } transition-all`}
-          >
-            Prev
-          </button>
-          <p className="text-sm">
-            Page {currentPage} of {3}
-          </p>
-          <button
-            onClick={() => {
-              setCurrentPage((prevPage) => Math.min(prevPage + 1, 3));
-            }}
-            disabled={currentPage === 3}
-            className={`py-1 px-3 bg-slate-50 rounded-md w-20 ${
-              currentPage !== 3
-                ? "hover:font-bold hover:bg-slate-100"
-                : "opacity-0"
-            } transition-all`}
-          >
-            Next
-          </button>
-        </div>
-      )}
     </motion.section>
   );
 }
