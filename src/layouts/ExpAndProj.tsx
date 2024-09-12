@@ -51,10 +51,10 @@ export default function ExpAndProj() {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       ref={sectionRef}
-      className="flex flex-col gap-1 w-full "
+      className="flex flex-col md:gap-1 w-full "
     >
       <motion.div
-        className="border bg-secondary flex justify-between items-end py-4 px-8 md:rounded-t-md"
+        className="border border-b-0 md:border-b bg-secondary flex justify-between items-end py-4 px-8 md:rounded-t-md"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{

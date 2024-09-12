@@ -5,14 +5,14 @@ import { fadeInAnimationVariants } from "../utils/staggerAnimation";
 export default function Skills() {
   return (
     <motion.section
-      className="md:max-w-[16rem] flex-col gap-1 flex"
+      className="md:max-w-[16rem] flex-col md:gap-1 flex"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
       <h1 className="bg-secondary border py-4 px-8 text-lg sm:text-2xl font-bold md:rounded-t-md">
         Skills
       </h1>
-      <div className="bg-secondary border py-4 px-8 flex flex-col gap-y-4">
+      <div className="bg-secondary border-r border-l md:border py-4 px-8 flex flex-col gap-y-4">
         <h2 className="capitalize font-semibold">Tech Stack</h2>
         <ul className="grid grid-cols-4 md:grid-cols-2 gap-y-2 gap-x-7">
           {techStack.map(({ skill, icon }, idx) => (
