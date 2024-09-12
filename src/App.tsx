@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AboutMe from "./layouts/AboutMe";
-import ExpAndProj from "./layouts/ExpAndProj";
+import ExpAndProj from "./layouts/ProjAndEduc";
 import Skills from "./layouts/Skills";
 
 const queryClient = new QueryClient();

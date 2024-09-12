@@ -11,7 +11,11 @@ interface ProjectsProps {
 
 export default function Projects({ repos }: ProjectsProps) {
   return (
-    <div className="flex flex-col gap-y-6">
+    <motion.div
+      className="flex flex-col gap-y-6"
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+    >
       <h2 className="font-semibold">Notable Projects</h2>
       {repos?.map(
         (
@@ -89,6 +93,6 @@ export default function Projects({ repos }: ProjectsProps) {
           </motion.div>
         )
       )}
-    </div>
+    </motion.div>
   );
 }
