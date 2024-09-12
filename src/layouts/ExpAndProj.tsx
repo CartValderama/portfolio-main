@@ -61,7 +61,7 @@ export default function ExpAndProj() {
           delay: 0.1,
         }}
       >
-        <h1 className="text-lg sm:text-2xl font-bold flex flex-wrap mr-5">
+        <h1 className="text-lg sm:text-2xl font-bold flex flex-wrap mr-3">
           Projects & Education
         </h1>
         <div className="flex">
@@ -71,7 +71,7 @@ export default function ExpAndProj() {
                 setIsProjects(true);
                 setCurrentPage(1);
               }}
-              className={`px-2 sm:px-4 py-1 border lg:w-[7rem] rounded-tl-md  transition-all ${
+              className={`px-2 sm:px-4 py-1 border w-[5.5rem] rounded-tl-md  transition-all ${
                 isProjects
                   ? "bg-stone-700 text-white font-bold border-r-0"
                   : "bg-white hover:font-bold hover:bg-stone-400 hover:text-white"
@@ -84,7 +84,7 @@ export default function ExpAndProj() {
                 setIsProjects(false);
                 setCurrentPage(1);
               }}
-              className={`px-2 sm:px-4 py-1 border lg:w-[7rem] rounded-tr-md  transition-all ${
+              className={`px-2 sm:px-4 py-1 border w-[5.5rem] rounded-tr-md  transition-all ${
                 !isProjects
                   ? "bg-stone-700 text-white font-bold border-l-0"
                   : "bg-white hover:font-bold hover:bg-stone-400 hover:text-white"
