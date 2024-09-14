@@ -6,7 +6,6 @@ import { colorChecker } from "../utils/colorChecker";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { fetchPublicRepos } from "../data/fetchData";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
 
 type ProjectsProps = {
   currentPage: number;
