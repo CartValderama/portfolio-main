@@ -1,4 +1,3 @@
-import React from "react";
 import { certificates } from "../data/staticData";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "../utils/staggerAnimation";
