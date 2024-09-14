@@ -12,11 +12,7 @@ import {
   SiVite,
 } from "react-icons/si";
 
-export const languages = [
-  "English",
-  "Norwegian (b1)",
-  "Filipino (native)",
-] as const;
+export const languages = ["English", "Filipino", "Norwegian (b1)"] as const;
 
 export const techStack = [
   {
@@ -63,28 +59,49 @@ export const techStack = [
 
 export const education = [
   {
-    typeOfEducation: "Masters's degree, Universal Design of ICT",
+    typeOfEducation: "Masters's degree: Universal Design of ICT",
     date: "August 2024 - Present",
-    place: "OsloMet - Oslo Metropolitan University",
+    place: "OsloMet",
     url: "https://www.oslomet.no/",
   },
   {
-    typeOfEducation: "Bachelor's degree, Information Technology",
+    typeOfEducation: "Bachelor's degree: Information Technology",
     date: "August 2021 - June 2024",
-    place: "OsloMet - Oslo Metropolitan University",
+    place: "OsloMet",
     url: "https://www.oslomet.no/",
   },
 
   {
-    typeOfEducation: "Videregående",
-    date: "August 2019 - June 2021",
+    typeOfEducation: "Senior Highschool: Adult Education",
+    date: "August 2019 - June 2020",
     place: "Stabekk Videregående",
     url: "https://afk.no/stabekk-vgs/",
   },
   {
-    typeOfEducation: "Senior Highschool",
+    typeOfEducation: "Senior Highschool: STEM",
     date: "June 2016 - May 2018",
-    place: "St Paul College of Bocaue",
+    place: "St Paul College",
     url: "https://spcbsite.orangeapps.ph/",
+  },
+] as const;
+
+export const certificates = [
+  {
+    name: "Responsive Web Design",
+    date: "September 2023",
+    from: "freeCodeCamp",
+    url: "https://www.freecodecamp.org/certification/cartman11/responsive-web-design",
+  },
+  {
+    name: "Legacy JavaScript ",
+    date: "August 2024",
+    from: "freeCodeCamp",
+    url: "https://www.freecodecamp.org/certification/cartman11/javascript-algorithms-and-data-structures",
+  },
+  {
+    name: "Legacy JavaScript (Beta)",
+    date: "August 2024",
+    from: "freeCodeCamp",
+    url: "https://www.freecodecamp.org/certification/cartman11/javascript-algorithms-and-data-structures-v8",
   },
 ] as const;

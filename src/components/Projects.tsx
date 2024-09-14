@@ -18,7 +18,7 @@ export default function Projects({
   currentPage,
   setCurrentPage,
 }: ProjectsProps) {
-  const reposPerPage = 3;
+  const reposPerPage = 2;
   const {
     isLoading,
     error,
@@ -34,11 +34,12 @@ export default function Projects({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 30 }}
+      initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
         delay: 0.1,
       }}
+      className="h-full"
     >
       {isLoading && (
         <div className="w-full flex items-center justify-center mt-32">
@@ -53,131 +54,147 @@ export default function Projects({
       )}
 
       {!isLoading && !error && (
-        <div className="flex flex-col gap-y-6 border bg-secondary justify-between py-6 px-8 md:rounded-b-md">
-          <h2 className="text-lg">Notable Projects</h2>
-          {repos?.map(
-            (
-              { id, name, description, html_url, homepage, language, topics },
-              idx
-            ) => (
-              <motion.div
-                key={id}
-                className="bg-slate-50 rounded-md py-4 px-6 flex flex-col justify-between relative overflow-hidden group"
-                variants={fadeInAnimationVariants("x", 50, 0)}
-                initial="initial"
-                animate="animate"
-                custom={idx}
-              >
-                <div className="flex flex-col items-start gap-y-1 mb-5">
-                  <div className="flex items-center justify-between w-full gap-x-2">
-                    <h3 className="capitalize text-xl font-medium">{name}</h3>
-                    <div className="flex gap-x-4 text-xl lg:text-sm">
-                      <a
-                        href={html_url}
-                        target="_blank"
-                        className="flex gap-x-1 items-center hover:underline transition-all"
-                      >
-                        <FaGithub />
-                        <span className="capitalize hidden lg:block">
-                          repository
-                        </span>
-                      </a>
-                      {homepage && (
-                        <a
-                          href={homepage}
-                          target="_blank"
-                          className="flex gap-x-1 items-center hover:underline transition-all"
-                        >
-                          <RxOpenInNewWindow />
-                          <span className="capitalize hidden lg:block">
-                            live demo
-                          </span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
+        <div className="border flex flex-col bg-secondary py-6 px-8 h-full">
+          <h2 className="text-lg mb-6">Notable Projects</h2>
+          <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col gap-y-6 ">
+              {repos?.map(
+                (
+                  {
+                    id,
+                    name,
+                    description,
+                    html_url,
+                    homepage,
+                    language,
+                    topics,
+                  },
+                  idx
+                ) => (
+                  <motion.div
+                    key={id}
+                    className="bg-slate-50 rounded-md py-4 px-6 flex flex-col justify-between relative overflow-hidden group"
+                    variants={fadeInAnimationVariants("x", 50, 0)}
+                    initial="initial"
+                    animate="animate"
+                    custom={idx}
+                  >
+                    <div className="flex flex-col items-start gap-y-1 mb-6">
+                      <div className="flex items-center justify-between w-full gap-x-2">
+                        <h3 className="capitalize text-xl font-bold">{name}</h3>
+                        <div className="flex gap-x-4 text-xl lg:text-sm">
+                          <a
+                            href={html_url}
+                            target="_blank"
+                            className="flex gap-x-1 items-center hover:underline transition-all"
+                          >
+                            <FaGithub />
+                            <span className="capitalize hidden lg:block">
+                              repository
+                            </span>
+                          </a>
+                          {homepage && (
+                            <a
+                              href={homepage}
+                              target="_blank"
+                              className="flex gap-x-1 items-center hover:underline transition-all"
+                            >
+                              <RxOpenInNewWindow />
+                              <span className="capitalize hidden lg:block">
+                                live demo
+                              </span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
 
-                  <p className="text-sm font-light text-secondary capitalize flex gap-x-1 items-center">
-                    Predominantly:{" "}
-                    <span
-                      className="font-normal"
-                      style={{
-                        color: language ? colorChecker(language) : "#57534e",
-                      }}
-                    >
-                      {language}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-y-4 lg:w-[22rem]">
-                  <div className="flex flex-col items-start gap-y-4">
-                    <p>
-                      {description
-                        ? description
-                        : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, laboriosam est libero facilis debitis commodi itaque eveniet numquam unde reiciendis"}
-                    </p>
-                    <ul className="flex gap-2 flex-wrap">
-                      {topics?.map((topic, idx) => (
-                        <li
-                          key={idx}
-                          className="text-[0.65rem] text-white px-2 py-1 font-thin rounded uppercase"
+                      <p className="text-sm text-secondary capitalize flex gap-x-1 items-center">
+                        Predominantly:{" "}
+                        <span
+                          className="font-normal"
                           style={{
-                            backgroundColor: language
+                            color: language
                               ? colorChecker(language)
                               : "#57534e",
                           }}
                         >
-                          {topic}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                          {language}
+                        </span>
+                      </p>
+                    </div>
 
-                <img
-                  src={`https://raw.githubusercontent.com/CartValderama/${name}/main/pics/${name}.png`}
-                  alt={`${name} image`}
-                  className="w-[23rem] border rounded-tl absolute -right-32 -bottom-20 group-hover:-translate-x-3 
+                    <div className="flex flex-col gap-y-4 lg:w-[22rem]">
+                      <div className="flex flex-col items-start gap-y-4">
+                        <p>
+                          {description
+                            ? description
+                            : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, laboriosam est libero facilis debitis commodi itaque eveniet numquam unde reiciendis"}
+                        </p>
+                        <ul className="flex gap-2 flex-wrap">
+                          {topics?.map((topic, idx) => (
+                            <li
+                              key={idx}
+                              className="text-[0.65rem] text-white px-2 py-1 font-thin rounded uppercase"
+                              style={{
+                                backgroundColor: language
+                                  ? colorChecker(language)
+                                  : "#57534e",
+                              }}
+                            >
+                              {topic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <img
+                      src={`https://raw.githubusercontent.com/CartValderama/${name}/main/pics/${name}.png`}
+                      alt={`${name} image`}
+                      className="w-[23rem] border rounded-tl absolute -right-32 -bottom-20 group-hover:-translate-x-3 
           group-hover:translate-y-3 group-hover:-rotate-2  transition-all duration-300 hidden lg:block"
-                />
-              </motion.div>
-            )
-          )}
-          <div className="flex justify-between items-center mt-12 space-x-2">
-            <button
-              onClick={() => {
-                setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-                handleScroll();
-              }}
-              disabled={currentPage === 1}
-              className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
-                currentPage !== 1
-                  ? "hover:font-bold hover:bg-slate-200"
-                  : "opacity-0"
-              } transition-all duration-300`}
-            >
-              Prev
-            </button>
-            <p className="text-sm">
-              <i>
-                Page {currentPage} of {3}
-              </i>
-            </p>
-            <button
-              onClick={() => {
-                setCurrentPage((prevPage) => Math.min(prevPage + 1, 3));
-                handleScroll();
-              }}
-              disabled={currentPage === 3}
-              className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
-                currentPage !== 3
-                  ? "hover:font-bold hover:bg-slate-200"
-                  : "opacity-0"
-              } transition-all duration-300`}
-            >
-              Next
-            </button>
+                    />
+                  </motion.div>
+                )
+              )}
+            </div>
+            <div className="flex justify-between items-center gap-x-2 mt-10">
+              <button
+                type="button"
+                onClick={() => {
+                  setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+                  handleScroll();
+                }}
+                disabled={currentPage === 1}
+                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
+                  currentPage !== 1
+                    ? "hover:font-bold hover:bg-slate-200"
+                    : "opacity-0"
+                } transition-all duration-300`}
+              >
+                Prev
+              </button>
+              <p className="text-sm">
+                <i>
+                  Page {currentPage} of {4}
+                </i>
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setCurrentPage((prevPage) => Math.min(prevPage + 1, 4));
+                  handleScroll();
+                }}
+                disabled={currentPage === 4}
+                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
+                  currentPage !== 4
+                    ? "hover:font-bold hover:bg-slate-200"
+                    : "opacity-0"
+                } transition-all duration-300`}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       )}

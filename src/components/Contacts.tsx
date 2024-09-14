@@ -6,7 +6,7 @@ import { FaFileDownload } from "react-icons/fa";
 export default function Contacts() {
   return (
     <motion.div
-      className="flex flex-col gap-y-4 bg-secondary border px-8 py-6 lg:rounded-tr-md lg:rounded-br-md"
+      className="flex flex-col gap-y-4 bg-secondary border px-8 py-6"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
     >

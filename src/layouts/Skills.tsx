@@ -5,11 +5,11 @@ import { fadeInAnimationVariants } from "../utils/staggerAnimation";
 export default function Skills() {
   return (
     <motion.section
-      className="md:max-w-[16rem] flex-col md:gap-1 flex"
+      className="md:max-w-[18rem] flex-col md:gap-1 flex"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
-      <h1 className="bg-secondary border py-6 px-8 text-xl lg:text-2xl font-bold md:rounded-t-md">
+      <h1 className="bg-secondary border py-6 px-8 text-xl lg:text-2xl font-bold">
         Skills
       </h1>
       <div className="bg-secondary border-r border-l md:border py-6 px-8 flex flex-col gap-y-6">
@@ -31,7 +31,7 @@ export default function Skills() {
           ))}
         </ul>
       </div>
-      <div className="bg-secondary border py-6 px-8 md:rounded-b-md flex flex-col gap-y-6">
+      <div className="bg-secondary border py-6 px-8 flex flex-col gap-y-6">
         <h2 className="capitalize text-lg">language</h2>
         <ul className="flex flex-wrap gap-2">
           {languages.map((language, idx) => (

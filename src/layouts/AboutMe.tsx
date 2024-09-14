@@ -7,9 +7,9 @@ export default function AboutMe() {
     <section className="flex flex-col lg:flex-row justify-between md:gap-1">
       <div className="flex flex-col md:gap-1">
         <motion.h1
-          className="text-xl lg:text-2xl font-bold bg-secondary border px-8 py-6 border-b-0 md:border-b lg:rounded-tl-md"
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="text-lg sm:text-2xl font-bold bg-secondary border px-8 py-4 border-b-0 md:border-b"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
         >
           Introduction
         </motion.h1>

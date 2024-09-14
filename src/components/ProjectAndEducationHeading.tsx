@@ -11,7 +11,7 @@ export default function ProjectAndEducationHeading({
 }: ProjectAndEducationHeadingProps) {
   return (
     <motion.div
-      className="border border-b-0 md:border-b bg-secondary flex justify-between items-end py-6 px-8 md:rounded-t-md"
+      className="border border-b-0 md:border-b bg-secondary flex justify-between items-end py-6 px-8 "
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
