@@ -1,7 +1,53 @@
+import { motion } from "framer-motion";
+
+const text = "Welcome to my portfolio, showcasing my projects and skills.";
+
+const DURATION = 0.2;
+const STAGGER = 0.075;
+const CHAR_SPACING = "0.02rem"; // Adjust the spacing between characters
+const WORD_SPACING = "0.2rem"; // Adjust the spacing between words
+
 export default function Header() {
+  const letters = text.split("").map((char, i) => ({
+    char,
+    isSpace: char === " ",
+    index: i,
+  }));
+
   return (
-    <header className="bg-secondary border px-8 py-6 mb-1 rounded-t-md">
-      <h1>Heading moto</h1>
+    <header className="bg-secondary border mb-1 rounded-t-md px-8 py-4">
+      <motion.div
+        className="relative block overflow-hidden whitespace-nowrap"
+        initial="initial"
+        animate="animate"
+      >
+        <h1 className="text-sm">
+          {letters.map(({ char, isSpace, index }) => (
+            <motion.span
+              key={index}
+              variants={{
+                initial: {
+                  y: isSpace ? 0 : "-100%",
+                },
+                animate: {
+                  y: isSpace ? 0 : 0,
+                },
+              }}
+              transition={{
+                duration: DURATION,
+                ease: "easeInOut",
+                delay: STAGGER * index,
+              }}
+              className="inline-block"
+              style={{
+                marginRight: isSpace ? WORD_SPACING : CHAR_SPACING,
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </h1>
+      </motion.div>
     </header>
   );
 }
