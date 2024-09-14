@@ -44,7 +44,7 @@ export const techStack = [
     icon: React.createElement(SiVite),
   },
   {
-    skill: "TailwindCSS",
+    skill: "Tailwind",
     icon: React.createElement(SiTailwindcss),
   },
   {
@@ -63,16 +63,10 @@ export const techStack = [
 
 export const education = [
   {
-    typeOfEducation: "Senior Highschool",
-    date: "June 206 - May 2018",
-    place: "St Paul College of Bocaue",
-    url: "https://spcbsite.orangeapps.ph/",
-  },
-  {
-    typeOfEducation: "Videregående",
-    date: "August 2019 - June 2021",
-    place: "Stabekk Videregående",
-    url: "https://afk.no/stabekk-vgs/",
+    typeOfEducation: "Masters's degree, Universal Design of ICT",
+    date: "August 2024 - Present",
+    place: "OsloMet - Oslo Metropolitan University",
+    url: "https://www.oslomet.no/",
   },
   {
     typeOfEducation: "Bachelor's degree, Information Technology",
@@ -80,10 +74,17 @@ export const education = [
     place: "OsloMet - Oslo Metropolitan University",
     url: "https://www.oslomet.no/",
   },
+
   {
-    typeOfEducation: "Masters's degree, Universal Design of ICT",
-    date: "August 2024 - Present",
-    place: "OsloMet - Oslo Metropolitan University",
-    url: "https://www.oslomet.no/",
+    typeOfEducation: "Videregående",
+    date: "August 2019 - June 2021",
+    place: "Stabekk Videregående",
+    url: "https://afk.no/stabekk-vgs/",
+  },
+  {
+    typeOfEducation: "Senior Highschool",
+    date: "June 2016 - May 2018",
+    place: "St Paul College of Bocaue",
+    url: "https://spcbsite.orangeapps.ph/",
   },
 ] as const;

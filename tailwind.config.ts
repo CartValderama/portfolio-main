@@ -3,6 +3,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "auto-fill": "repeat(auto-fill, minmax(90px, 1fr))",
+        "auto-fit": "repeat(auto-fit, minmax(90px, 1fr))",
+      },
+      fontFamily: {
+        sans: ["Rubik", "sans-serif"], // Set Rubik as the default sans font
+      },
       textColor: {
         primary: "#46423f",
         secondary: "#8A817C",

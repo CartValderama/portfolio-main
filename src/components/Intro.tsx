@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Intro() {
   return (
     <motion.div
-      className="flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-4 lg:rounded-bl-md"
+      className="flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-6 lg:rounded-bl-md"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
     >
@@ -21,8 +21,8 @@ export default function Intro() {
           className="w-36 rounded-full"
         />
         <div className="flex flex-col">
-          <p className="text-2xl font-bold">Cart Antonio Valderama</p>
-          <p className="font-thin text-secondary text-sm">Student</p>
+          <p className="text-3xl font-bold">Cart Antonio Valderama</p>
+          <p className="font-thin text-secondary text">Student</p>
         </div>
       </motion.div>
       <motion.p
