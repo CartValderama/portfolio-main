@@ -20,7 +20,6 @@ export default function ThemeContextProvider({
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
-      console.log(theme);
       document.documentElement.classList.add("dark");
     } else {
       setTheme("light");
@@ -35,7 +34,7 @@ export default function ThemeContextProvider({
   );
 }
 
-export function useTheme() {
+export const useTheme = () => {
   const context = useContext(ThemeContext);
 
   if (context === null) {
@@ -43,4 +42,4 @@ export function useTheme() {
   }
 
   return context;
-}
+};
