@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AcademicEducation from "./AcademicEducation";
+import Certificates from "./Certificates";
 
 export default function Education() {
   return (
@@ -9,9 +10,10 @@ export default function Education() {
       transition={{
         delay: 0.1,
       }}
-      className="flex flex-col md:gap-y-1 h-full"
+      className="flex flex-col md:gap-y-1 md:h-full"
     >
       <AcademicEducation />
+      <Certificates />
     </motion.div>
   );
 }
