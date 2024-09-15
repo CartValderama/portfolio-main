@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import ThemeSwitch from "../components/theme-switch";
 
-const text = "Welcome to my portfolio, showcasing my projects and skills.";
+const text = "Welcome to my portfolio.";
 
-const DURATION = 0.2;
-const STAGGER = 0.075;
+const DURATION = 0.1;
+const STAGGER = 0.1;
 const CHAR_SPACING = "0.02rem"; // Adjust the spacing between characters
 const WORD_SPACING = "0.2rem"; // Adjust the spacing between words
 

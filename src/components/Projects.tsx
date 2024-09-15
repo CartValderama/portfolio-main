@@ -76,7 +76,7 @@ export default function Projects({
                 ) => (
                   <motion.div
                     key={id}
-                    className="bg-slate-50 rounded-md py-4 px-6 flex flex-col justify-between relative overflow-hidden group dark:bg-white/10"
+                    className="bg-slate-50 rounded-sm py-6 px-6 flex flex-col justify-between relative overflow-hidden group dark:bg-white/10"
                     variants={fadeInAnimationVariants("x", 50, 0)}
                     initial="initial"
                     animate="animate"
@@ -139,7 +139,7 @@ export default function Projects({
                           {topics?.map((topic, idx) => (
                             <li
                               key={idx}
-                              className="text-[0.65rem] text-white dark:text-stone-800 px-2 py-1 font-thin rounded uppercase"
+                              className="text-[0.65rem] text-white dark:text-stone-800 px-2 py-1 font-thin rounded-sm uppercase"
                               style={{
                                 backgroundColor:
                                   theme === "light"
@@ -166,7 +166,7 @@ export default function Projects({
                 )
               )}
             </div>
-            <div className="flex justify-between items-center gap-x-2 mt-10">
+            <div className="flex justify-between items-center gap-x-2 mt-5">
               <button
                 type="button"
                 onClick={() => {
