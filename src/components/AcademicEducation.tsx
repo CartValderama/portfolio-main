@@ -4,9 +4,9 @@ import { fadeInAnimationVariants } from "../utils/staggerAnimation";
 
 export default function AcademicEducation() {
   return (
-    <div className="flex flex-col gap-y-5 border bg-secondary py-6 px-8 h-full dark:bg-white/10 dark:border-white/10">
+    <div className="flex flex-col gap-y-5 border bg-secondary py-6 px-8 md:h-full dark:bg-white/10 dark:border-white/10">
       <h2 className="text-lg">Education</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-4 h-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-4 md:h-full">
         {education.map(({ typeOfEducation, date, place }, idx) => (
           <motion.div
             key={idx}
