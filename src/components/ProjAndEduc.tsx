@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import Projects from "../components/Projects";
-import ProjectAndEducationHeading from "../components/ProjectAndEducationHeading";
-import Education from "../components/Education";
+import Projects from "./Projects";
+import ProjectAndEducationHeading from "./ProjectAndEducationHeading";
+import Education from "./Education";
 
 export default function ProjAndEduc() {
   const [isProjects, setIsProjects] = useState(true);

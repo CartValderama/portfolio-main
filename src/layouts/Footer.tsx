@@ -4,7 +4,7 @@ import { FaCode } from "react-icons/fa"; // Import a single icon
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-secondary border px-8 py-6 mt-1 rounded-b-md"
+      className="bg-secondary border px-8 py-6 mt-1 rounded-b-md dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >

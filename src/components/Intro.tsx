@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Intro() {
   return (
     <motion.div
-      className="flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-6"
+      className="flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-6 dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
     >

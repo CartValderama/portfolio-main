@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ThemeSwitch from "../components/theme-switch";
 
 const text = "Welcome to my portfolio, showcasing my projects and skills.";
 
@@ -15,7 +16,7 @@ export default function Header() {
   }));
 
   return (
-    <header className="bg-secondary border mb-1 rounded-t-md px-8 py-4">
+    <header className="flex justify-between items-center bg-secondary border mb-1 rounded-t-md px-8 py-4 dark:bg-white/10 dark:border-white/10">
       <motion.div
         className="relative block overflow-hidden whitespace-nowrap"
         initial="initial"
@@ -48,6 +49,7 @@ export default function Header() {
           ))}
         </h1>
       </motion.div>
+      <ThemeSwitch />
     </header>
   );
 }

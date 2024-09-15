@@ -8,7 +8,7 @@ export default {
         "auto-fit": "repeat(auto-fit, minmax(90px, 1fr))",
       },
       fontFamily: {
-        sans: ["Rubik", "sans-serif"], // Set Rubik as the default sans font
+        sans: ["Rubik", "sans-serif"],
       },
       textColor: {
         primary: "#46423f",
@@ -20,5 +20,6 @@ export default {
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };

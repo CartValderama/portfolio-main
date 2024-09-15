@@ -72,13 +72,13 @@ export const education = [
   },
 
   {
-    typeOfEducation: "Senior Highschool: Adult Education",
+    typeOfEducation: "Senior Highschool: Voksneopplæring",
     date: "August 2019 - June 2020",
     place: "Stabekk Videregående",
     url: "https://afk.no/stabekk-vgs/",
   },
   {
-    typeOfEducation: "Senior Highschool: STEM",
+    typeOfEducation: "Senior Highschool (K-12): STEM strand",
     date: "June 2016 - May 2018",
     place: "St Paul College",
     url: "https://spcbsite.orangeapps.ph/",

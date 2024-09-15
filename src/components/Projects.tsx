@@ -6,6 +6,7 @@ import { colorChecker } from "../utils/colorChecker";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { fetchPublicRepos } from "../data/fetchData";
 import { useQuery } from "@tanstack/react-query";
+import { useTheme } from "../context/theme-context";
 
 type ProjectsProps = {
   currentPage: number;
@@ -32,6 +33,8 @@ export default function Projects({
     sectionRef.current?.scrollIntoView();
   };
 
+  const { theme } = useTheme();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -54,7 +57,7 @@ export default function Projects({
       )}
 
       {!isLoading && !error && (
-        <div className="border flex flex-col bg-secondary py-6 px-8 h-full">
+        <div className="border flex flex-col bg-secondary py-6 px-8 h-full dark:bg-white/10 dark:border-white/10">
           <h2 className="text-lg mb-6">Notable Projects</h2>
           <div className="flex flex-col justify-between h-full">
             <div className="flex flex-col gap-y-6 ">
@@ -73,7 +76,7 @@ export default function Projects({
                 ) => (
                   <motion.div
                     key={id}
-                    className="bg-slate-50 rounded-md py-4 px-6 flex flex-col justify-between relative overflow-hidden group"
+                    className="bg-slate-50 rounded-md py-4 px-6 flex flex-col justify-between relative overflow-hidden group dark:bg-white/10"
                     variants={fadeInAnimationVariants("x", 50, 0)}
                     initial="initial"
                     animate="animate"
@@ -111,11 +114,13 @@ export default function Projects({
                       <p className="text-sm text-secondary capitalize flex gap-x-1 items-center">
                         Predominantly:{" "}
                         <span
-                          className="font-normal"
                           style={{
-                            color: language
-                              ? colorChecker(language)
-                              : "#57534e",
+                            color:
+                              theme === "light"
+                                ? language
+                                  ? colorChecker(language)
+                                  : "#57534e"
+                                : "#FAF9F6",
                           }}
                         >
                           {language}
@@ -134,11 +139,14 @@ export default function Projects({
                           {topics?.map((topic, idx) => (
                             <li
                               key={idx}
-                              className="text-[0.65rem] text-white px-2 py-1 font-thin rounded uppercase"
+                              className="text-[0.65rem] text-white dark:text-stone-800 px-2 py-1 font-thin rounded uppercase"
                               style={{
-                                backgroundColor: language
-                                  ? colorChecker(language)
-                                  : "#57534e",
+                                backgroundColor:
+                                  theme === "light"
+                                    ? language
+                                      ? colorChecker(language)
+                                      : "#57534e"
+                                    : "#FAF9F6",
                               }}
                             >
                               {topic}
@@ -152,7 +160,7 @@ export default function Projects({
                       src={`https://raw.githubusercontent.com/CartValderama/${name}/main/pics/${name}.png`}
                       alt={`${name} image`}
                       className="w-[23rem] border rounded-tl absolute -right-32 -bottom-20 group-hover:-translate-x-3 
-          group-hover:translate-y-3 group-hover:-rotate-2  transition-all duration-300 hidden lg:block"
+          group-hover:translate-y-3 group-hover:-rotate-2  transition-all duration-300 hidden lg:block dark:border-transparent"
                     />
                   </motion.div>
                 )
@@ -166,9 +174,9 @@ export default function Projects({
                   handleScroll();
                 }}
                 disabled={currentPage === 1}
-                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
+                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 dark:bg-white/10 ${
                   currentPage !== 1
-                    ? "hover:font-bold hover:bg-slate-200"
+                    ? "hover:font-bold hover:bg-slate-200 dark:hover:bg-white/20 "
                     : "opacity-0"
                 } transition-all duration-300`}
               >
@@ -186,9 +194,9 @@ export default function Projects({
                   handleScroll();
                 }}
                 disabled={currentPage === 4}
-                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 ${
+                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 dark:bg-white/10  ${
                   currentPage !== 4
-                    ? "hover:font-bold hover:bg-slate-200"
+                    ? "hover:font-bold hover:bg-slate-200 dark:hover:bg-white/20 "
                     : "opacity-0"
                 } transition-all duration-300`}
               >

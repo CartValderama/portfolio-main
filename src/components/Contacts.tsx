@@ -6,7 +6,7 @@ import { FaFileDownload } from "react-icons/fa";
 export default function Contacts() {
   return (
     <motion.div
-      className="flex flex-col gap-y-4 bg-secondary border px-8 py-6"
+      className="flex flex-col gap-y-4 bg-secondary border px-8 py-6 dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
     >
@@ -29,9 +29,14 @@ export default function Contacts() {
             </button>
           </div>
 
-          <p className="text-sm sm:text-base truncate " id="email">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=cartantonio2000@gmail.com"
+            target="_blank"
+            className="text-sm sm:text-base truncate "
+            id="email"
+          >
             cartantonio2000@gmail.com
-          </p>
+          </a>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -61,12 +66,12 @@ export default function Contacts() {
             delay: 0.15,
           }}
         >
-          <h3 className="">Socials</h3>
+          <h3>Socials</h3>
           <div className="flex text-sm sm:text-base gap-3">
             <a
               href=""
               target="_blank"
-              className="flex gap-1 items-center font-light text-black hover:text-stone-500 hover:underline transition-all"
+              className="flex gap-1 items-center text-sm sm:text-base text-black hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
             >
               <FaGithub />
               <span>Github</span>
@@ -74,7 +79,7 @@ export default function Contacts() {
             <a
               href=""
               target="_blank"
-              className="flex gap-1 items-center font-light text-sky-700 hover:text-stone-500 hover:underline transition-all"
+              className="flex gap-1 items-center text-sm sm:text-base text-sky-700 hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
             >
               <FaLinkedin />
               <span>LinkedIn</span>
@@ -91,7 +96,7 @@ export default function Contacts() {
           <h3 className="">Resume</h3>
           <a
             href=""
-            className="flex gap-1 items-center hover:text-stone-500 text-sm sm:text-base transition-all"
+            className="flex gap-1 items-center hover:underline text-sm sm:text-base transition-all duration-300"
           >
             <FaFileDownload />
             <span>resume.pdf</span>
