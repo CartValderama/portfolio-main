@@ -69,7 +69,7 @@ export default function Contacts() {
           <h3>Socials</h3>
           <div className="flex text-sm sm:text-base gap-3">
             <a
-              href=""
+              href="https://github.com/CartValderama"
               target="_blank"
               className="flex gap-1 items-center text-sm sm:text-base text-black hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
             >
@@ -77,7 +77,7 @@ export default function Contacts() {
               <span>Github</span>
             </a>
             <a
-              href=""
+              href="https://www.linkedin.com/in/cart-valderama/"
               target="_blank"
               className="flex gap-1 items-center text-sm sm:text-base text-sky-700 hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
             >
