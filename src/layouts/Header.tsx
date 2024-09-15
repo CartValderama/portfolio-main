@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ThemeSwitch from "../components/Theme-switch";
+import ThemeSwitch from "../components/ThemeSwitch";
 
 const text = "Welcome to my portfolio.";
 
