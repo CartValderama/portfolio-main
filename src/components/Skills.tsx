@@ -14,7 +14,7 @@ export default function Skills() {
       </h1>
       <div className="bg-secondary border-r border-l md:border py-6 px-8 flex flex-col gap-y-6 dark:bg-white/10 dark:border-white/10">
         <h2 className="capitalize text-lg">Tech Stack</h2>
-        <ul className="grid grid-cols-auto-fit md:grid-cols-2 gap-4">
+        <ul className="grid grid-cols-auto-fit gap-3 md:grid-cols-2 md:gap-4">
           {techStack.map(({ skill, icon }, idx) => (
             <motion.li
               className="w-16 md:w-auto text-sm px-12 py-4 md:px-10 flex flex-col items-center gap-2 bg-slate-50 rounded-sm dark:bg-white/10"
@@ -36,7 +36,7 @@ export default function Skills() {
         <ul className="flex flex-wrap gap-2">
           {languages.map((language, idx) => (
             <motion.li
-              className="rounded-sm bg-slate-50 py-2 px-4 text-sm dark:bg-white/10"
+              className="rounded-sm bg-slate-50 px-2 py-2 md:px-4 text-sm dark:bg-white/10"
               key={idx}
               variants={fadeInAnimationVariants("x", -100, 0)}
               initial="initial"
