@@ -45,13 +45,13 @@ export default function Projects({
       className="h-full"
     >
       {isLoading && (
-        <div className="w-full flex items-center justify-center mt-32">
+        <div className="w-full flex items-center justify-center my-32">
           <div className="w-44 h-44 border-4 border-stone-500 border-t-transparent border-solid rounded-full animate-spin text-center"></div>
         </div>
       )}
 
       {error && (
-        <p className="text-center text-2xl capitalize mt-32">
+        <p className="text-center text-2xl capitalize my-32">
           Something went wrong when fetching the data
         </p>
       )}

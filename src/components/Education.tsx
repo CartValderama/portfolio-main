@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import AcademicEducation from "./AcademicEducation";
-import Certificates from "./Certificates";
 
 export default function Education() {
   return (
@@ -13,7 +12,6 @@ export default function Education() {
       className="flex flex-col md:gap-y-1 h-full"
     >
       <AcademicEducation />
-      <Certificates />
     </motion.div>
   );
 }
