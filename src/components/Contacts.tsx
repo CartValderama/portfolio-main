@@ -32,10 +32,10 @@ export default function Contacts() {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=cartantonio2000@gmail.com"
             target="_blank"
-            className="text-sm sm:text-base truncate "
+            className="text-sm sm:text-base flex"
             id="email"
           >
-            cartantonio2000@gmail.com
+            <span className="truncate">cartantonio2000@gmail.com</span>
           </a>
         </motion.div>
         <motion.div
