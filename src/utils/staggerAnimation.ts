@@ -12,7 +12,7 @@ export const fadeInAnimationVariants = (
       opacity: 1,
       [direction]: animateValue, // Corrected dynamic key usage
       transition: {
-        delay: 0.05 * index,
+        delay: 0.075 * index,
       },
     }),
   };

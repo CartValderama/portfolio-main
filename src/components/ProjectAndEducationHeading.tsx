@@ -22,10 +22,10 @@ export default function ProjectAndEducationHeading({
         Projects & Education
       </h1>
 
-      <div className="flex gap-x-3">
+      <div className="flex">
         <button
           onClick={() => setIsProjects(true)}
-          className={`px-2 border-b-2 transition-colors ease-in-out border-transparent ${
+          className={`px-4 border-b-2 transition-colors ease-in-out border-transparent ${
             isProjects
               ? "border-b-stone-600 dark:border-b-[#fcf9ec]"
               : "text-secondary"
@@ -35,7 +35,7 @@ export default function ProjectAndEducationHeading({
         </button>
         <button
           onClick={() => setIsProjects(false)}
-          className={`px-2 border-b-2 transition-colors ease-in-out border-transparent ${
+          className={`px-4 border-b-2 transition-colors ease-in-out border-transparent ${
             !isProjects
               ? "border-b-stone-600 dark:border-b-[#fcf9ec]"
               : "text-secondary"
