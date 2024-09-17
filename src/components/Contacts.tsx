@@ -96,7 +96,7 @@ export default function Contacts() {
           <h3 className="">Resume</h3>
           <a
             href="../../public\CV_CartValderama.pdf"
-            target="_blank"
+            download
             className="flex gap-1 items-center hover:underline text-sm sm:text-base transition-all duration-300"
           >
             <FaFileDownload />
