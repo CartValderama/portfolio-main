@@ -1,20 +1,15 @@
 import { motion } from "framer-motion";
 import ThemeSwitch from "../components/ThemeSwitch";
+import { textSplitter } from "../utils/textSplitter";
 
 const text = "Welcome to my portfolio.";
 
 const DURATION = 0.1;
 const STAGGER = 0.1;
-const CHAR_SPACING = "0.02rem"; // Adjust the spacing between characters
-const WORD_SPACING = "0.2rem"; // Adjust the spacing between words
+const CHAR_SPACING = "0.02rem";
+const WORD_SPACING = "0.2rem";
 
 export default function Header() {
-  const letters = text.split("").map((char, i) => ({
-    char,
-    isSpace: char === " ",
-    index: i,
-  }));
-
   return (
     <header className="flex justify-between items-center bg-secondary border mb-1 rounded-t-md px-8 py-4 dark:bg-white/10 dark:border-white/10">
       <motion.div
@@ -23,7 +18,7 @@ export default function Header() {
         animate="animate"
       >
         <h1 className="text-sm">
-          {letters.map(({ char, isSpace, index }) => (
+          {textSplitter(text).map(({ char, isSpace, index }) => (
             <motion.span
               key={index}
               variants={{
