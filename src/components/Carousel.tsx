@@ -31,7 +31,7 @@ export function CarouselPlugin({ data }: CarouselPluginProps) {
       <CarouselContent>
         {data.map(({ name, icon }, index) => (
           <CarouselItem key={index}>
-            <div className="p-1 flex flex-col gap-1 items-center justify-center">
+            <div className="p-1 flex flex-col gap-1 items-center justify-center select-none">
               <i className="text-2xl">{icon}</i>
               <span>{name}</span>
             </div>

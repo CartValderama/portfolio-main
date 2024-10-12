@@ -185,7 +185,7 @@ export const education = [
   {
     title: "Videregående: Voksneopplæring",
     date: "August 2019 - June 2020",
-    desc: "Completed adult education with a focus on essential academic qualifications, preparing for higher education.",
+    desc: "Successfully completed an adult education program in Norway to attain the qualifications necessary for pursuing higher education.",
     place: "Stabekk Videregående",
     icon: React.createElement(FaUserGraduate),
   },
