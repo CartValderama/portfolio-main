@@ -211,18 +211,18 @@ export default function Projects({
 
               <p className="text-sm">
                 <i>
-                  Page {currentPage} of {4}
+                  Page {currentPage} of {3}
                 </i>
               </p>
 
               <button
                 type="button"
                 onClick={() => {
-                  setCurrentPage((prevPage) => Math.min(prevPage + 1, 4));
+                  setCurrentPage((prevPage) => Math.min(prevPage + 1, 3));
                   handleScroll();
                 }}
-                disabled={currentPage === 4}
-                aria-disabled={currentPage === 4}
+                disabled={currentPage === 3}
+                aria-disabled={currentPage === 3}
                 aria-label="Next Page"
                 className={`py-1 px-3 border dark:border-none rounded w-20 dark:bg-white/10 ${
                   currentPage !== 4
