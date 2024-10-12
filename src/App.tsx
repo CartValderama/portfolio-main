@@ -11,7 +11,10 @@ export default function App() {
     <ThemeContextProvider>
       <ActiveSectionContextProvider>
         <div className="max-w-4xl sm:mt-2 gap-6 flex flex-col m-auto text-primary dark:text-opacity-85 dark:text-[#fcf9ec]">
-          <Toaster position="top-center" />
+          <Toaster
+            position="bottom-center"
+            containerClassName="mb-32 md:mb-0"
+          />
           <Header />
           <Body />
           <Footer />
