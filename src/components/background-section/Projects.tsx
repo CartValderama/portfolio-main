@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa6";
-import { fadeInAnimationVariants } from "../utils/staggerAnimation";
-import { RepositoryProps } from "../types/repository";
-import { colorChecker } from "../utils/colorChecker";
+import { fadeInAnimationVariants } from "../../utils/general-utils";
+import { RepositoryProps } from "../../types/repository";
+import { colorChecker } from "../../utils/general-utils";
 import { RxOpenInNewWindow } from "react-icons/rx";
-import { fetchPublicRepos } from "../data/fetchData";
+import { fetchPublicRepos } from "../../data/fetchData";
 import { useQuery } from "@tanstack/react-query";
-import { useTheme } from "../context/theme-context";
+import { useTheme } from "../../utils/useContext";
+import Skeleton from "./Skeleton";
 
 type ProjectsProps = {
   currentPage: number;
@@ -37,29 +38,43 @@ export default function Projects({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
         delay: 0.1,
       }}
-      className="h-full"
+      className="col-span-9"
     >
-      {isLoading && (
-        <div className="w-full flex items-center justify-center my-32">
-          <div className="w-44 h-44 border-4 border-stone-500 border-t-transparent border-solid rounded-full animate-spin text-center"></div>
+      {isLoading && <Skeleton />}
+      {error && (
+        <div className="border flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/10">
+          <div className="h-[25rem] flex flex-col justify-center items-center">
+            <h2 className="text-center text-2xl uppercase mb-2 w-3/4">
+              Something went wrong while fetching data from GitHub
+            </h2>
+
+            <p className="flex justify-center items-center gap-1 text-sm text-secondary">
+              You can just visit my{" "}
+              <a
+                href="https://github.com/CartValderama"
+                className="text-black underline flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View my projects on GitHub"
+              >
+                <FaGithub />
+                GitHub
+              </a>{" "}
+              to view my projects.
+            </p>
+          </div>
         </div>
       )}
 
-      {error && (
-        <p className="text-center text-2xl capitalize my-32">
-          Something went wrong when fetching the data
-        </p>
-      )}
-
       {!isLoading && !error && (
-        <div className="border flex flex-col bg-secondary py-6 px-8 h-full dark:bg-white/10 dark:border-white/10">
-          <h2 className="text-lg mb-6">Notable Projects</h2>
-          <div className="flex flex-col justify-between h-full">
+        <div className="border flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/10">
+          <h2 className="text-xl mb-6">Notable Projects</h2>
+          <div className="flex flex-col justify-between">
             <div className="flex flex-col gap-y-6 ">
               {repos?.map(
                 (
@@ -76,7 +91,7 @@ export default function Projects({
                 ) => (
                   <motion.div
                     key={id}
-                    className="bg-slate-50 rounded-sm py-6 px-6 flex flex-col justify-between relative overflow-hidden group dark:bg-white/10"
+                    className="bg-slate-50 rounded p-6 flex flex-col justify-between relative overflow-hidden group dark:bg-white/10"
                     variants={fadeInAnimationVariants("x", 50, 0)}
                     initial="initial"
                     animate="animate"
@@ -89,7 +104,9 @@ export default function Projects({
                           <a
                             href={html_url}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="flex gap-x-1 items-center hover:underline transition-all"
+                            aria-label={`View the GitHub repository for ${name}`}
                           >
                             <FaGithub />
                             <span className="capitalize hidden lg:block">
@@ -100,7 +117,9 @@ export default function Projects({
                             <a
                               href={homepage}
                               target="_blank"
+                              rel="noopener noreferrer"
                               className="flex gap-x-1 items-center hover:underline transition-all"
+                              aria-label={`View the live demo for ${name}`}
                             >
                               <RxOpenInNewWindow />
                               <span className="capitalize hidden lg:block">
@@ -128,7 +147,7 @@ export default function Projects({
                       </p>
                     </div>
 
-                    <div className="flex flex-col gap-y-4 lg:w-[22rem]">
+                    <div className="flex flex-col gap-y-4 w-11/12 md:w-8/12">
                       <div className="flex flex-col items-start gap-y-4">
                         <p>
                           {description
@@ -139,7 +158,7 @@ export default function Projects({
                           {topics?.map((topic, idx) => (
                             <li
                               key={idx}
-                              className="text-[0.65rem] text-white dark:text-stone-800 px-2 py-1 font-thin rounded-sm uppercase"
+                              className="text-xs text-white dark:text-stone-800 px-2 py-1 font-thin rounded-sm uppercase"
                               style={{
                                 backgroundColor:
                                   theme === "light"
@@ -159,14 +178,19 @@ export default function Projects({
                     <img
                       src={`https://raw.githubusercontent.com/CartValderama/${name}/main/pics/${name}.png`}
                       alt={`${name} image`}
-                      className="w-[23rem] border rounded-tl absolute -right-32 -bottom-20 group-hover:-translate-x-3 
-          group-hover:translate-y-3 group-hover:-rotate-2  transition-all duration-300 hidden lg:block dark:border-transparent"
+                      aria-hidden="true"
+                      className="w-[23rem] border rounded-tl absolute -right-44 -bottom-20 group-hover:-translate-x-3 
+          group-hover:translate-y-3 group-hover:-rotate-2  transition-all duration-300 hidden md:block dark:border-transparent"
                     />
                   </motion.div>
                 )
               )}
             </div>
-            <div className="flex justify-between items-center gap-x-2 mt-5">
+            <div
+              className="flex justify-between items-center gap-x-2 mt-5"
+              role="navigation"
+              aria-label="Pagination Navigation"
+            >
               <button
                 type="button"
                 onClick={() => {
@@ -174,19 +198,23 @@ export default function Projects({
                   handleScroll();
                 }}
                 disabled={currentPage === 1}
-                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 dark:bg-white/10 ${
+                aria-disabled={currentPage === 1}
+                aria-label="Previous Page"
+                className={`py-1 px-3 border dark:border-none rounded-sm w-20 dark:bg-white/10 ${
                   currentPage !== 1
-                    ? "hover:font-bold hover:bg-slate-200 dark:hover:bg-white/20 "
+                    ? "hover:bg-gray-100 dark:hover:bg-stone-900"
                     : "opacity-0"
                 } transition-all duration-300`}
               >
                 Prev
               </button>
+
               <p className="text-sm">
                 <i>
                   Page {currentPage} of {4}
                 </i>
               </p>
+
               <button
                 type="button"
                 onClick={() => {
@@ -194,9 +222,11 @@ export default function Projects({
                   handleScroll();
                 }}
                 disabled={currentPage === 4}
-                className={`py-1 px-3 bg-slate-100 rounded-sm w-20 dark:bg-white/10  ${
+                aria-disabled={currentPage === 4}
+                aria-label="Next Page"
+                className={`py-1 px-3 border dark:border-none rounded w-20 dark:bg-white/10 ${
                   currentPage !== 4
-                    ? "hover:font-bold hover:bg-slate-200 dark:hover:bg-white/20 "
+                    ? "hover:bg-gray-100 dark:hover:bg-stone-900"
                     : "opacity-0"
                 } transition-all duration-300`}
               >
