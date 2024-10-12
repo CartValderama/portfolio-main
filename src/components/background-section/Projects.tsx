@@ -225,7 +225,7 @@ export default function Projects({
                 aria-disabled={currentPage === 3}
                 aria-label="Next Page"
                 className={`py-1 px-3 border dark:border-none rounded w-20 dark:bg-white/10 ${
-                  currentPage !== 4
+                  currentPage !== 3
                     ? "hover:bg-gray-100 dark:hover:bg-stone-900"
                     : "opacity-0"
                 } transition-all duration-300`}
