@@ -52,6 +52,7 @@ export default function Projects() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             sectionRef={sectionRef}
+            totalPages={3}
           />
         </div>
       )}

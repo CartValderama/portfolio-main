@@ -4,7 +4,7 @@ import { companyList, experience } from "@/data/staticData";
 import { CustomCarousel } from "./ui/custom/Carousel";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience", 0.5);
+  const { ref } = useSectionInView("Experience", 0.8);
   return (
     <section
       className="flex flex-col md:grid grid-cols-12 grid-rows-12 md:gap-1 scroll-mt-20"

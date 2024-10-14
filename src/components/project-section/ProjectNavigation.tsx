@@ -1,27 +1,28 @@
-import { Dispatch, MutableRefObject, SetStateAction, useEffect } from "react";
+import { Dispatch, MutableRefObject, SetStateAction, useState } from "react";
+import { usePagination } from "@/utils/hooks";
 
 type ProjectNavigationProps = {
   currentPage: number;
   setCurrentPage: Dispatch<SetStateAction<number>>;
   sectionRef: MutableRefObject<HTMLHeadingElement | null>;
+  totalPages: number; // Ensure totalPages is still a prop
 };
 
 export default function ProjectNavigation({
   currentPage,
   setCurrentPage,
   sectionRef,
+  totalPages = 3,
 }: ProjectNavigationProps) {
-  useEffect(() => {
-    sectionRef.current?.scrollIntoView();
-  }, [currentPage, sectionRef]);
+  const [isStartNavigating, setIsStartNavigating] = useState(false);
 
-  const handlePageChange = (direction: "prev" | "next") => {
-    setCurrentPage((prevPage) =>
-      direction === "prev"
-        ? Math.max(prevPage - 1, 1)
-        : Math.min(prevPage + 1, 3)
-    );
-  };
+  const { handlePageChange } = usePagination({
+    currentPage,
+    setCurrentPage,
+    sectionRef,
+    totalPages,
+    isStartNavigating,
+  });
 
   return (
     <div
@@ -31,14 +32,17 @@ export default function ProjectNavigation({
     >
       <button
         type="button"
-        onClick={() => handlePageChange("prev")}
+        onClick={() => {
+          handlePageChange("prev");
+          setIsStartNavigating(true);
+        }}
         disabled={currentPage === 1}
         aria-disabled={currentPage === 1}
         aria-label="Previous Page"
         className={`py-1 px-3 border dark:border-none rounded-sm w-20 dark:bg-white/10 ${
-          currentPage !== 1
+          currentPage > 1
             ? "hover:bg-gray-100 dark:hover:bg-stone-900"
-            : "opacity-0"
+            : "opacity-50 cursor-not-allowed"
         } transition-all duration-300`}
       >
         Prev
@@ -46,20 +50,23 @@ export default function ProjectNavigation({
 
       <p className="text-sm">
         <i>
-          Page {currentPage} of {3}
+          Page {currentPage} of {totalPages}
         </i>
       </p>
 
       <button
         type="button"
-        onClick={() => handlePageChange("next")}
-        disabled={currentPage === 3}
-        aria-disabled={currentPage === 3}
+        onClick={() => {
+          handlePageChange("next");
+          setIsStartNavigating(true);
+        }}
+        disabled={currentPage === totalPages}
+        aria-disabled={currentPage === totalPages}
         aria-label="Next Page"
         className={`py-1 px-3 border dark:border-none rounded w-20 dark:bg-white/10 ${
-          currentPage !== 3
+          currentPage < totalPages
             ? "hover:bg-gray-100 dark:hover:bg-stone-900"
-            : "opacity-0"
+            : "opacity-50 cursor-not-allowed"
         } transition-all duration-300`}
       >
         Next
