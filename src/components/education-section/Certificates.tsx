@@ -28,9 +28,9 @@ export default function Certificates() {
                 <span className="hidden lg:block">view</span>
               </a>
             </div>
-            <div className="text-sm">
-              <p>{from}</p>
-              <p className="text-secondary text-xs">{date}</p>
+            <div>
+              <p className="text-sm">{from}</p>
+              <p className="text-stone-600 text-xs">{date}</p>
             </div>
           </motion.div>
         ))}

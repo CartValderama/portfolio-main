@@ -40,11 +40,11 @@ export default function Academic() {
                 animate="animate"
                 custom={idx}
               >
-                <h3 className="capitalize flex flex-wrap text-base">{title}</h3>
+                <h3 className="capitalize flex flex-wrap">{title}</h3>
 
-                <div className="text-xs">
+                <div>
                   <p className="text-sm">{place}</p>
-                  <p className="text-secondary">{date}</p>
+                  <p className="text-stone-600 text-xs">{date}</p>
                 </div>
               </motion.div>
             ))}

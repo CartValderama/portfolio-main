@@ -3,7 +3,7 @@ import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import ThemeContextProvider from "./context/theme-context";
 import { Toaster } from "react-hot-toast";
-import Body from "./layouts/Body";
+import Body from "./layouts/Main";
 import ActiveSectionContextProvider from "./context/active-section-context";
 
 export default function App() {

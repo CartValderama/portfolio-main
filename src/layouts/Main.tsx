@@ -7,9 +7,9 @@ import Projects from "@/components/Projects";
 
 const queryClient = new QueryClient();
 
-export default function Body() {
+export default function Main() {
   return (
-    <body className="flex flex-col gap-6 ">
+    <main className="flex flex-col gap-6 ">
       <Introduction />
       <Skills />
       <Education />
@@ -17,6 +17,6 @@ export default function Body() {
         <Projects />
       </QueryClientProvider>
       <Experience />
-    </body>
+    </main>
   );
 }

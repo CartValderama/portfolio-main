@@ -60,7 +60,7 @@ export default function ProjectContent({ content }: ProjectContentProps) {
                 </div>
               </div>
 
-              <p className="text-sm text-secondary capitalize flex gap-x-1 items-center">
+              <p className="text-sm text-stone-600 capitalize flex gap-x-1 items-center">
                 Predominantly:{" "}
                 <span
                   style={{
