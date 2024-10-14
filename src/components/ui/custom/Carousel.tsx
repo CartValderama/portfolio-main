@@ -55,7 +55,7 @@ export function CustomCarousel({ data, delay }: CustomCarouselProps) {
               {imgUrl && (
                 <img src={imgUrl} className="rounded w-60 h-56 mt-2" />
               )}
-              <h2 className={`${imgUrl ? "text-2xl" : "text-base"} my-2 `}>
+              <h2 className={`${imgUrl ? "text-2xl my-2" : "text-base"}  `}>
                 {title}
               </h2>
               {imgUrl && <p className="text-sm">{desc}</p>}
