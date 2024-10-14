@@ -1,28 +1,33 @@
 import { useTheme } from "../utils/useContext";
 import { motion } from "framer-motion";
-import { FaMoon, FaSun } from "react-icons/fa";
-
+import { Moon, Sun } from "lucide-react";
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
   const isDarkMode = theme === "dark";
 
   return (
     <motion.button
-      className="text-sm w-[2rem] h-[2rem] text-yellow-600 bottom-5 right-5 bg-opacity-70 backdrop-blur-[0.5rem] border border-yellow-600 border-opacity-40 shadow-2xl flex items-center justify-center transition-colors hover:bg-yellow-100 dark:border-sky-800 dark:text-sky-800 rounded-md dark:hover:bg-sky-900"
+      className={`w-[4.3rem] group relative bg-slate-100 dark:bg-white/10 rounded-full p-1 flex items-center transition-all shadow-inner`}
       onClick={toggleTheme}
-      aria-label={
-        isDarkMode
-          ? "the website's theme color is in dark mode"
-          : "the website's theme color is in light mode"
-      }
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{
-        type: "spring",
-        delay: 0.1,
-      }}
+      aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+      role="switch"
+      aria-checked={isDarkMode}
     >
-      {isDarkMode ? <FaMoon /> : <FaSun />}
+      <span
+        className={`text-xs absolute transition-transform transform ${
+          isDarkMode ? "ml-[0.3rem]" : "translate-x-[1.8rem] "
+        }`}
+        aria-hidden="true"
+      >
+        {isDarkMode ? "Dark" : "Light"}
+      </span>
+      <span className="bg-yellow-400 shadow-2xl dark:bg-black/50 rounded-full p-1 transition-transform ease-in-out duration-300 transform dark:translate-x-[2.3rem] group-hover:bg-yellow-500 dark:group-hover:bg-black/90">
+        {isDarkMode ? (
+          <Moon className="h-4 w-4 " />
+        ) : (
+          <Sun className="h-4 w-4 text-white" />
+        )}
+      </span>
     </motion.button>
   );
 }

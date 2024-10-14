@@ -7,7 +7,7 @@ export default function Certificates() {
   return (
     <div className="flex flex-col gap-y-5 border border-t-0 md:border md:rounded-md bg-secondary py-6 px-8  dark:bg-white/10 dark:border-white/10">
       <h2 className="text-xl">Certificates</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-2 lg:gap-4 ">
         {certificates.map(({ title, date, from, url }, idx) => (
           <motion.div
             key={idx}

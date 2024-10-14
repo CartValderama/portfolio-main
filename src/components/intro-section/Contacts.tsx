@@ -11,7 +11,7 @@ export default function Contacts() {
       animate={{ opacity: 1, x: 0 }}
     >
       <h2 className="text-xl">Contacts</h2>
-      <div className="flex flex-wrap md:flex-col gap-4 gap-x-10">
+      <div className="flex flex-wrap md:flex-col gap-3 gap-x-10">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}

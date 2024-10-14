@@ -1,5 +1,5 @@
 import { otherSkills } from "../../data/staticData";
-import Accordion from "../Accordion";
+import Accordion from "../ui/custom/Accordion";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "../../utils/general-utils";
 

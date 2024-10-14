@@ -17,7 +17,7 @@ import {
   FaCss3,
   FaBootstrap,
 } from "react-icons/fa";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaFolderClosed, FaMagnifyingGlass } from "react-icons/fa6";
 import { GrBraille } from "react-icons/gr";
 import {
   SiJavascript,
@@ -137,19 +137,19 @@ export const tools = [
 
 export const aboutCart = [
   {
-    name: "Frontend Dev",
+    title: "Frontend Dev",
     icon: React.createElement(FaLaptopCode),
   },
   {
-    name: "Minimalist Design",
+    title: "Minimalist Design",
     icon: React.createElement(FaPaintBrush),
   },
   {
-    name: "React User",
+    title: "React User",
     icon: React.createElement(FaReact),
   },
   {
-    name: "Student",
+    title: "Student",
     icon: React.createElement(FaGraduationCap),
   },
 ];
@@ -166,7 +166,7 @@ export const experience = [
     title: "Work Immersion",
     date: "January 2018 - February 2018",
     desc: "Completed a one-month internship in a structural engineering company during senior high school, gaining practical experience in engineering concepts and project development.",
-    place: "Nander",
+    place: "Nander Engineering Group",
     icon: React.createElement(FaBriefcase),
   },
 ] as const;
@@ -190,7 +190,7 @@ export const otherSkills = [
   },
   {
     title: "Web Designing: Crafting Simple and Intuitive Interfaces",
-    desc: "Familiar with design principles such as atomic design and Gestalt laws. Emphasizes the creation of simple and intuitive interfaces which adheres to one of the principles of universal design, making applications more accessible to a diverse audience.",
+    desc: "Familiar with design principles such as atomic design and Gestalt laws. Emphasizes the creation of interfaces which adheres to one of the principles of universal design, making applications more accessible to a diverse audience.",
     icon: React.createElement(FaPalette),
   },
 ] as const;
@@ -259,8 +259,32 @@ export const links = [
     icon: React.createElement(FaTools),
   },
   {
-    name: "Background",
-    hash: "#background",
+    name: "Projects",
+    hash: "#projects",
+    icon: React.createElement(FaFolderClosed),
+  },
+  {
+    name: "Experience",
+    hash: "#experience",
     icon: React.createElement(FaBriefcase),
   },
+  {
+    name: "Education",
+    hash: "#education",
+    icon: React.createElement(FaBook),
+  },
 ] as const;
+
+export const companyList = [
+  {
+    title: "Forte Digital",
+    imgUrl:
+      "https://th.bing.com/th/id/OLC.XdXwPSRp7IwMPA480x360?&rs=1&pid=ImgDetMain",
+    desc: "Forte Digital is an international consulting company that serves as a long-term digital partner, helping businesses grow through innovative solutions.",
+  },
+  {
+    title: "Nander",
+    imgUrl: "https://i.imgur.com/EentFrs.png",
+    desc: "Nander Engineering Group is an engineering consulting company that specializes in modern design strategies for sustainable infrastructure.",
+  },
+];

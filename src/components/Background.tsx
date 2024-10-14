@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import Projects from "./background-section/Projects";
-import Education from "./background-section/Education";
-import { Dropdown } from "./Dropdown";
+import Projects from "./Projects";
+import { Dropdown } from "./ui/custom/Dropdown";
 import { useSectionInView } from "@/utils/hooks";
-import Experience from "./background-section/Experience";
+import Experience from "./Experience";
 import { motion } from "framer-motion";
 
 const sections = [
@@ -14,8 +13,7 @@ const sections = [
 
 export default function Background() {
   const [backgroundSection, setBackgroundSection] = useState("Projects"); // Default to "Projects"
-  const [currentPage, setCurrentPage] = useState(1);
-  const sectionRef = useRef<HTMLHeadingElement | null>(null);
+
   const [threshold, setThreshold] = useState(0.8);
 
   useEffect(() => {
@@ -58,15 +56,7 @@ export default function Background() {
         />
       </motion.div>
 
-      {backgroundSection === "Education" && <Education />}
       {backgroundSection === "Experience" && <Experience />}
-      {backgroundSection === "Projects" && (
-        <Projects
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          sectionRef={sectionRef}
-        />
-      )}
     </section>
   );
 }

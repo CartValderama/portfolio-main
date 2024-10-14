@@ -22,7 +22,7 @@ export default function AboutMe() {
         />
         <div className="flex flex-col">
           <p className="text-2xl">Cart Antonio Valderama</p>
-          <p className="font-thin text-secondary text">Student</p>
+          <p className=" text-secondary text">Student</p>
         </div>
       </motion.div>
       <motion.p
@@ -32,12 +32,12 @@ export default function AboutMe() {
           delay: 0.2,
         }}
       >
-        Hi, I'm Cart Antonio Valderama, a 24-year-old from Oslo, Norway, working
-        toward becoming a skilled frontend developer. Passionate about modern
-        web development, always exploring new technologies and tools to create
-        responsive, high-performance websites. My goal is to continuously grow
-        as a developer, refine skills, and contribute to projects that provide
-        meaningful impact for users.
+        Hello, I’m Cart Antonio Valderama, an aspiring frontend developer
+        dedicated to creating simple and intuitive web interfaces. With a solid
+        foundation in HTML, CSS, and JavaScript, I possess expertise in building
+        responsive layouts and optimizing performance. Currently, I’m exploring
+        new tools and techniques to enhance my projects while prioritizing
+        accessibility and performance.
       </motion.p>
     </motion.div>
   );

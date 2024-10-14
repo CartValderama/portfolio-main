@@ -1,7 +1,9 @@
 import Skills from "../components/Skills";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Introduction from "../components/Introduction";
-import Background from "../components/Background";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 const queryClient = new QueryClient();
 
@@ -10,9 +12,12 @@ export default function Body() {
     <main className="flex flex-col gap-6 ">
       <Introduction />
       <Skills />
+
       <QueryClientProvider client={queryClient}>
-        <Background />
+        <Projects />
       </QueryClientProvider>
+      <Experience />
+      <Education />
     </main>
   );
 }

@@ -51,9 +51,9 @@ export default function Timeline({ data }: TimelineProps) {
               animate="animate"
               custom={idx}
             >
-              <h3 className="capitalize flex flex-wrap">
+              <h2 className="capitalize flex flex-wrap">
                 {place ?? "Unknown Place"} {" - "} {title ?? "Unknown Name"}
-              </h3>
+              </h2>
               <p className="text-secondary text-sm">{date ?? "Unknown Date"}</p>
               <p className="mt-3">{desc ?? "No Description Available"}</p>
             </motion.div>

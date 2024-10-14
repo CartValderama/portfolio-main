@@ -1,4 +1,4 @@
-import { CarouselPlugin } from "@/components/Carousel";
+import { CustomCarousel } from "@/components/ui/custom/Carousel";
 import { aboutCart } from "@/data/staticData";
 import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa"; // Import a single icon
@@ -20,10 +20,10 @@ export default function Footer() {
         </div>
       </div>
       <div
-        className="hidden sm:block bg-secondary border px-8 py-6 border-l-0 md:border-l mt-1 md:rounded-md dark:bg-white/10 dark:border-white/10"
+        className="hidden w-[14rem] sm:block bg-secondary border px-8 py-6 border-l-0 md:border-l mt-1 md:rounded-md dark:bg-white/10 dark:border-white/10"
         aria-hidden={true}
       >
-        <CarouselPlugin data={aboutCart} />
+        <CustomCarousel data={aboutCart} delay={2000} />
       </div>
     </motion.footer>
   );

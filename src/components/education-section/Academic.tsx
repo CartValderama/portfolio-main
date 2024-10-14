@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { education } from "../../data/staticData";
 import { fadeInAnimationVariants } from "../../utils/general-utils";
 import { useState } from "react";
-import Timeline from "../Timeline";
+import Timeline from "../ui/custom/Timeline";
 import { FaTh } from "react-icons/fa";
 import { FaTimeline } from "react-icons/fa6";
 
@@ -27,7 +27,7 @@ export default function Academic() {
         {isGridLayout ? (
           <motion.div
             key="grid"
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-2 lg:gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >

@@ -31,7 +31,7 @@ export function Dropdown({ data, action, def }: DropdownProps) {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          role="dropdown"
+          role="menu"
           aria-label={`currently in ${value} tab`}
           aria-expanded={open}
           className="w-[140px] dark:bg-white/10 dark:border-none justify-between"
@@ -47,6 +47,7 @@ export function Dropdown({ data, action, def }: DropdownProps) {
           {data.map((framework) => (
             <DropdownMenuItem
               key={framework.value}
+              role="menuitem"
               onSelect={() => {
                 setValue(framework.value);
                 action(framework.value);
