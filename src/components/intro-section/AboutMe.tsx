@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function AboutMe() {
   return (
     <motion.div
-      className="col-span-4 md:rounded-md flex flex-col gap-y-4 bg-stone-600 border border-b-0 md:border-b px-8 py-6 dark:bg-white/10 dark:border-white/10"
+      className="col-span-4 md:rounded-md flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-6 dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
     >
@@ -22,7 +22,7 @@ export default function AboutMe() {
         />
         <div className="flex flex-col">
           <p className="text-2xl">Cart Antonio Valderama</p>
-          <p className=" text-secondary text">Student</p>
+          <p className=" text-stone-600 text">Student</p>
         </div>
       </motion.div>
       <motion.p
