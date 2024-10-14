@@ -10,19 +10,17 @@ import {
   FaReact,
   FaPaintBrush,
   FaGraduationCap,
+  FaFigma,
+  FaGithub,
+  FaGitAlt,
+  FaHtml5,
+  FaCss3,
+  FaBootstrap,
 } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GrBraille } from "react-icons/gr";
 import {
-  SiBootstrap,
-  SiCss3,
-  SiFigma,
-  SiGit,
-  SiGithub,
-  SiHtml5,
   SiJavascript,
-  SiMaterialdesign,
-  SiReact,
   SiRedux,
   SiShadcnui,
   SiTailwindcss,
@@ -31,6 +29,111 @@ import {
   SiVisualstudiocode,
   SiVite,
 } from "react-icons/si";
+import {
+  svgBootstrap,
+  svgCSS,
+  svgFigma,
+  svgGit,
+  svgGitBash,
+  svgGithub,
+  svgHTML,
+  svgJavaScript,
+  svgReact,
+  svgRedux,
+  svgShadcn,
+  svgTailwind,
+  svgTypescript,
+  svgVisualStudio,
+  svgVite,
+  svgVSCode,
+} from "./svgLists";
+
+export const techStack = [
+  {
+    skill: "HTML",
+    svg: svgHTML,
+    icon: React.createElement(FaHtml5),
+  },
+  {
+    skill: "CSS",
+    svg: svgCSS,
+    icon: React.createElement(FaCss3),
+  },
+  {
+    skill: "JavaScript",
+    svg: svgJavaScript,
+    icon: React.createElement(SiJavascript),
+  },
+  {
+    skill: "ReactJS",
+    svg: svgReact,
+    icon: React.createElement(FaReact),
+  },
+  {
+    skill: "Vite",
+    svg: svgVite,
+    icon: React.createElement(SiVite),
+  },
+  {
+    skill: "TypeScript",
+    svg: svgTypescript,
+    icon: React.createElement(SiTypescript),
+  },
+  {
+    skill: "Git",
+    svg: svgGit,
+    icon: React.createElement(FaGitAlt),
+  },
+  {
+    skill: "Redux",
+    svg: svgRedux,
+    icon: React.createElement(SiRedux),
+  },
+  {
+    skill: "Bootstrap",
+    svg: svgBootstrap,
+    icon: React.createElement(FaBootstrap),
+  },
+  {
+    skill: "Tailwind",
+    svg: svgTailwind,
+    icon: React.createElement(SiTailwindcss),
+  },
+  {
+    skill: "Shadcn UI",
+    svg: svgShadcn,
+    icon: React.createElement(SiShadcnui),
+  },
+] as const;
+
+export const tools = [
+  {
+    tool: "VS Code",
+    svg: svgVSCode,
+    icon: React.createElement(SiVisualstudiocode),
+  },
+  {
+    tool: "Figma",
+    svg: svgFigma,
+    icon: React.createElement(FaFigma),
+  },
+
+  {
+    tool: "GitHub",
+    svg: svgGithub,
+    icon: React.createElement(FaGithub),
+  },
+  {
+    tool: "Git Bash",
+    svg: svgGitBash,
+    icon: React.createElement(FaGitAlt),
+  },
+  {
+    tool: "Visual Studio",
+    svg: svgVisualStudio,
+    icon: React.createElement(SiVisualstudio),
+  },
+] as const;
 
 export const aboutCart = [
   {
@@ -69,84 +172,9 @@ export const experience = [
 ] as const;
 
 export const languages = [
-  "English",
+  "English (US)",
   "Filipino (native)",
   "Norwegian (b1)",
-] as const;
-
-export const techStack = [
-  {
-    skill: "HTML",
-    icon: React.createElement(SiHtml5),
-  },
-  {
-    skill: "CSS",
-    icon: React.createElement(SiCss3),
-  },
-  {
-    skill: "JavaScript",
-    icon: React.createElement(SiJavascript),
-  },
-  {
-    skill: "ReactJS",
-    icon: React.createElement(SiReact),
-  },
-  {
-    skill: "Vite",
-    icon: React.createElement(SiVite),
-  },
-  {
-    skill: "TypeScript",
-    icon: React.createElement(SiTypescript),
-  },
-  {
-    skill: "Git",
-    icon: React.createElement(SiGit),
-  },
-  {
-    skill: "Redux",
-    icon: React.createElement(SiRedux),
-  },
-  {
-    skill: "Bootstrap",
-    icon: React.createElement(SiBootstrap),
-  },
-  {
-    skill: "Tailwind",
-    icon: React.createElement(SiTailwindcss),
-  },
-  {
-    skill: "Shadcn UI",
-    icon: React.createElement(SiShadcnui),
-  },
-  {
-    skill: "Material UI",
-    icon: React.createElement(SiMaterialdesign),
-  },
-] as const;
-
-export const tools = [
-  {
-    tool: "Figma",
-    icon: React.createElement(SiFigma),
-  },
-
-  {
-    tool: "VS Code",
-    icon: React.createElement(SiVisualstudiocode),
-  },
-  {
-    tool: "GitHub",
-    icon: React.createElement(SiGithub),
-  },
-  {
-    tool: "Git Bash",
-    icon: React.createElement(SiGit),
-  },
-  {
-    tool: "Visual Studio",
-    icon: React.createElement(SiVisualstudio),
-  },
 ] as const;
 
 export const otherSkills = [

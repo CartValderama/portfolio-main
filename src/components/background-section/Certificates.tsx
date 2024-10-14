@@ -11,7 +11,7 @@ export default function Certificates() {
         {certificates.map(({ title, date, from, url }, idx) => (
           <motion.div
             key={idx}
-            className="bg-slate-50 p-4 rounded-sm flex flex-col gap-y-2 justify-between h dark:bg-white/10"
+            className="bg-slate-50 py-4 px-6 rounded-sm flex flex-col gap-y-6 justify-between dark:bg-white/10"
             variants={fadeInAnimationVariants("x", 50, 0)}
             initial="initial"
             animate="animate"

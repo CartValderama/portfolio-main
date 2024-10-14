@@ -34,7 +34,7 @@ export default function Academic() {
             {education.map(({ title, date, place }, idx) => (
               <motion.div
                 key={idx}
-                className="bg-slate-50 py-4 px-6 rounded-sm flex flex-col justify-between gap-y-2 dark:bg-white/10"
+                className="bg-slate-50 py-4 px-6 rounded-sm flex flex-col justify-between gap-y-6 dark:bg-white/10"
                 variants={fadeInAnimationVariants("x", 50, 0)}
                 initial="initial"
                 animate="animate"
