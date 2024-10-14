@@ -145,7 +145,7 @@ export const aboutCart = [
     icon: React.createElement(FaPaintBrush),
   },
   {
-    title: "React User",
+    title: "React",
     icon: React.createElement(FaReact),
   },
   {
@@ -254,9 +254,14 @@ export const links = [
     icon: React.createElement(FaHome),
   },
   {
-    name: "Skills",
-    hash: "#skills",
+    name: "Skillset",
+    hash: "#skillset",
     icon: React.createElement(FaTools),
+  },
+  {
+    name: "Education",
+    hash: "#education",
+    icon: React.createElement(FaBook),
   },
   {
     name: "Projects",
@@ -267,11 +272,6 @@ export const links = [
     name: "Experience",
     hash: "#experience",
     icon: React.createElement(FaBriefcase),
-  },
-  {
-    name: "Education",
-    hash: "#education",
-    icon: React.createElement(FaBook),
   },
 ] as const;
 

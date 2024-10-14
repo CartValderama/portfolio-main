@@ -12,12 +12,11 @@ export default function Body() {
     <main className="flex flex-col gap-6 ">
       <Introduction />
       <Skills />
-
+      <Education />
       <QueryClientProvider client={queryClient}>
         <Projects />
       </QueryClientProvider>
       <Experience />
-      <Education />
     </main>
   );
 }

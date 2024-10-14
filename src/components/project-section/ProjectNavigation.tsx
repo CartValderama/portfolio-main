@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, SetStateAction } from "react";
+import { Dispatch, MutableRefObject, SetStateAction, useEffect } from "react";
 
 type ProjectNavigationProps = {
   currentPage: number;
@@ -11,8 +11,16 @@ export default function ProjectNavigation({
   setCurrentPage,
   sectionRef,
 }: ProjectNavigationProps) {
-  const handleScroll = () => {
+  useEffect(() => {
     sectionRef.current?.scrollIntoView();
+  }, [currentPage, sectionRef]);
+
+  const handlePageChange = (direction: "prev" | "next") => {
+    setCurrentPage((prevPage) =>
+      direction === "prev"
+        ? Math.max(prevPage - 1, 1)
+        : Math.min(prevPage + 1, 3)
+    );
   };
 
   return (
@@ -23,10 +31,7 @@ export default function ProjectNavigation({
     >
       <button
         type="button"
-        onClick={() => {
-          setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-          handleScroll();
-        }}
+        onClick={() => handlePageChange("prev")}
         disabled={currentPage === 1}
         aria-disabled={currentPage === 1}
         aria-label="Previous Page"
@@ -47,10 +52,7 @@ export default function ProjectNavigation({
 
       <button
         type="button"
-        onClick={() => {
-          setCurrentPage((prevPage) => Math.min(prevPage + 1, 3));
-          handleScroll();
-        }}
+        onClick={() => handlePageChange("next")}
         disabled={currentPage === 3}
         aria-disabled={currentPage === 3}
         aria-label="Next Page"

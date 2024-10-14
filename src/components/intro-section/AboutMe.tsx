@@ -32,12 +32,12 @@ export default function AboutMe() {
           delay: 0.2,
         }}
       >
-        Hello, I’m Cart Antonio Valderama, an aspiring frontend developer
-        dedicated to creating simple and intuitive web interfaces. With a solid
-        foundation in HTML, CSS, and JavaScript, I possess expertise in building
-        responsive layouts and optimizing performance. Currently, I’m exploring
-        new tools and techniques to enhance my projects while prioritizing
-        accessibility and performance.
+        Hello! I’m Cart Antonio Valderama an aspiring frontend developer with a
+        strong foundation in technologies such as HTML CSS JavaScript React and
+        TypeScript. My goal is to create user-friendly web interfaces and build
+        modern intuitive web applications. I am currently exploring new tools
+        and deepening my knowledge of web accessibility to ensure an inclusive
+        and seamless user experience.
       </motion.p>
     </motion.div>
   );

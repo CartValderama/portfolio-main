@@ -52,7 +52,9 @@ export function CustomCarousel({ data, delay }: CustomCarouselProps) {
               onMouseLeave={handleMouseUp}
             >
               <i className="text-2xl">{icon}</i>
-              {imgUrl && <img src={imgUrl} className="rounded w-60 h-56" />}
+              {imgUrl && (
+                <img src={imgUrl} className="rounded w-60 h-56 mt-2" />
+              )}
               <h2 className={`${imgUrl ? "text-2xl" : "text-base"} my-2 `}>
                 {title}
               </h2>

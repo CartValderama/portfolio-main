@@ -14,7 +14,7 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
     >
       <nav className="flex justify-center items-center h-full">
-        <ul className="flex flex-wrap items-center justify-center gap-y-1 w-full sm:w-[initial] sm:flex-nowrap gap-10">
+        <ul className="flex flex-wrap items-center justify-center gap-y-1 w-full sm:w-[initial] sm:flex-nowrap gap-10 md:gap-4">
           {links.map((link) => (
             <motion.li
               key={link.hash}
@@ -26,7 +26,7 @@ export default function Header() {
               }}
             >
               <a
-                className={`p-2 hover:text-stone-950 transition-all duration-300 ease-in-out dark:text-stone-200 flex items-center gap-x-2 justify-center relative hover:bg-stone-100 dark:hover:text-stone-800 dark:hover:bg-stone-500 rounded ${
+                className={`p-2 md:w-[8rem] hover:text-stone-950 transition-all duration-300 ease-in-out dark:text-stone-200 flex items-center gap-x-2 justify-center relative hover:bg-stone-100 dark:hover:text-stone-800 dark:hover:bg-stone-500 rounded ${
                   activeSection === link.name ? "text-stone-950" : ""
                 }`}
                 href={link.hash}

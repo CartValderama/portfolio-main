@@ -22,13 +22,13 @@ export default function Skills() {
     };
   }, []);
 
-  const { ref } = useSectionInView("Skills", threshold);
+  const { ref } = useSectionInView("Skillset", threshold);
 
   return (
     <motion.section
       className="flex flex-col md:grid grid-cols-3 md:gap-1 scroll-mt-20"
       ref={ref}
-      id="skills"
+      id="skillset"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
