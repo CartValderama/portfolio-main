@@ -11,9 +11,15 @@ export default function Education() {
       id="education"
       ref={ref}
     >
-      <h1 className="flex justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5 text-xl sm:text-2xl font-bold uppercase">
-        Education
-      </h1>
+      <motion.div
+        className="flex justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        <h1 className="text-xl sm:text-2xl font-bold uppercase scroll-mt-28">
+          Education
+        </h1>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
