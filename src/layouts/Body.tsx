@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 export default function Body() {
   return (
-    <main className="flex flex-col gap-6 ">
+    <body className="flex flex-col gap-6 ">
       <Introduction />
       <Skills />
       <Education />
@@ -17,6 +17,6 @@ export default function Body() {
         <Projects />
       </QueryClientProvider>
       <Experience />
-    </main>
+    </body>
   );
 }

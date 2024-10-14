@@ -26,9 +26,8 @@ export default function Welcome() {
         className="relative block overflow-hidden whitespace-nowrap"
         initial="initial"
         animate="animate"
-        aria-hidden="true"
       >
-        <p className="text-sm">
+        <p className="text-sm" aria-hidden="true">
           {textSplitter(text).map(({ char, isSpace, index }) => (
             <motion.span
               key={index}

@@ -81,7 +81,7 @@ export default function Contacts() {
             aria-label="Download Cart Valderama's resume as a PDF"
           >
             <FaFileDownload />
-            <span>resume.pdf</span>
+            <span aria-label="resume">resume.pdf</span>
           </a>
         </motion.div>
         <motion.div
