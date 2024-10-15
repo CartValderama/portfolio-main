@@ -42,7 +42,7 @@ export default function ProjectNavigation({
         className={`py-1 px-3 border dark:border-none rounded-sm w-20 dark:bg-white/10 ${
           currentPage > 1
             ? "hover:bg-gray-100 dark:hover:bg-stone-900"
-            : "opacity-50 cursor-not-allowed"
+            : "opacity-30 cursor-not-allowed"
         } transition-all duration-300`}
       >
         Prev
@@ -66,7 +66,7 @@ export default function ProjectNavigation({
         className={`py-1 px-3 border dark:border-none rounded w-20 dark:bg-white/10 ${
           currentPage < totalPages
             ? "hover:bg-gray-100 dark:hover:bg-stone-900"
-            : "opacity-50 cursor-not-allowed"
+            : "opacity-30 cursor-not-allowed"
         } transition-all duration-300`}
       >
         Next
