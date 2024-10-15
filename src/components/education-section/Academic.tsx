@@ -44,7 +44,9 @@ export default function Academic() {
 
                 <div>
                   <p className="text-sm">{place}</p>
-                  <p className="text-stone-600 text-xs">{date}</p>
+                  <p className="text-stone-600 dark:text-stone-300 text-xs">
+                    {date}
+                  </p>
                 </div>
               </motion.div>
             ))}

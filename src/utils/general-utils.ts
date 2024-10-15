@@ -16,7 +16,7 @@ export const colorChecker = (language: string) => {
     case "TypeScript":
       return "#225389";
     case "JavaScript":
-      return "#D4af37";
+      return "#b29127";
     case "SCSS":
       return "#c6538c";
     default:

@@ -22,7 +22,7 @@ export default function AboutMe() {
         />
         <div className="flex flex-col">
           <p className="text-2xl">Cart Antonio Valderama</p>
-          <p className=" text-stone-600 text">Student</p>
+          <p className=" text-stone-600 dark:text-stone-300">Student</p>
         </div>
       </motion.div>
       <motion.p

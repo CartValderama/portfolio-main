@@ -54,7 +54,9 @@ export default function Timeline({ data }: TimelineProps) {
               <h2 className="capitalize flex flex-wrap">
                 {place ?? "Unknown Place"} {" - "} {title ?? "Unknown Name"}
               </h2>
-              <p className="text-stone-600 text-sm">{date ?? "Unknown Date"}</p>
+              <p className="text-stone-600 dark:text-stone-300 text-sm">
+                {date ?? "Unknown Date"}
+              </p>
               <p className="mt-3">{desc ?? "No Description Available"}</p>
             </motion.div>
           </motion.div>
