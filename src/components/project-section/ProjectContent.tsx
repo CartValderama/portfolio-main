@@ -4,6 +4,7 @@ import { useTheme } from "@/utils/useContext";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { RxOpenInNewWindow } from "react-icons/rx";
+import TooltipCustom from "../ui/custom/Tooltip";
 
 type ProjectContentProps = {
   content: RepositoryProps[];
@@ -31,31 +32,36 @@ export default function ProjectContent({ content }: ProjectContentProps) {
               <div className="flex items-center justify-between w-full gap-x-2">
                 <h3 className="capitalize text-xl font-bold">{name}</h3>
                 <div className="flex gap-x-4 text-xl lg:text-sm">
-                  <a
-                    href={html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex gap-x-1 items-center hover:underline transition-all"
-                    aria-label={`View the GitHub repository for ${name}`}
-                  >
-                    <FaGithub />
-                    <span className="capitalize hidden lg:block">
-                      repository
-                    </span>
-                  </a>
-                  {homepage && (
+                  <TooltipCustom msg="check source code">
                     <a
-                      href={homepage}
+                      href={html_url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex gap-x-1 items-center hover:underline transition-all"
-                      aria-label={`View the live demo for ${name}`}
+                      aria-label={`View the GitHub repository for ${name}`}
                     >
-                      <RxOpenInNewWindow />
+                      <FaGithub />
                       <span className="capitalize hidden lg:block">
-                        live demo
+                        repository
                       </span>
                     </a>
+                  </TooltipCustom>
+
+                  {homepage && (
+                    <TooltipCustom msg="see demo">
+                      <a
+                        href={homepage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex gap-x-1 items-center hover:underline transition-all"
+                        aria-label={`View the live demo for ${name}`}
+                      >
+                        <RxOpenInNewWindow />
+                        <span className="capitalize hidden lg:block">
+                          live demo
+                        </span>
+                      </a>
+                    </TooltipCustom>
                   )}
                 </div>
               </div>

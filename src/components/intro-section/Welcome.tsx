@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { textSplitter } from "../../utils/general-utils";
 import ThemeSwitch from "../ThemeSwitch";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import TooltipCustom from "../ui/custom/Tooltip";
 
 const text = "Welcome to my portfolio.";
 
@@ -54,18 +49,10 @@ export default function Welcome() {
           ))}
         </p>
       </motion.div>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <div>
-              <ThemeSwitch />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Switch theme</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+
+      <TooltipCustom msg={"switch theme"}>
+        <ThemeSwitch />
+      </TooltipCustom>
     </motion.div>
   );
 }

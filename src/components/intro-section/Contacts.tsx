@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { copyText } from "../../utils/general-utils";
 import { FaGithub, FaLinkedin, FaRegCopy } from "react-icons/fa6";
 import { FaFileDownload } from "react-icons/fa";
+import TooltipCustom from "../ui/custom/Tooltip";
 
 export default function Contacts() {
   return (
@@ -22,13 +23,15 @@ export default function Contacts() {
         >
           <div className="flex items-baseline gap-x-2">
             <h3 className="">Phone no.</h3>
-            <button
-              onClick={() => copyText("phone")}
-              className=" hover:text-stone-500 transition "
-              aria-label="copy phone number +47 908 83 637"
-            >
-              <FaRegCopy />
-            </button>
+            <TooltipCustom msg="copy phone no.">
+              <button
+                onClick={() => copyText("phone")}
+                className=" hover:text-stone-500 transition "
+                aria-label="copy phone number +47 908 83 637"
+              >
+                <FaRegCopy />
+              </button>
+            </TooltipCustom>
           </div>
 
           <p id="phone" className="truncate">
@@ -45,24 +48,29 @@ export default function Contacts() {
         >
           <h3>Socials</h3>
           <div className="flex gap-3">
-            <a
-              href="https://github.com/CartValderama"
-              target="_blank"
-              className="flex gap-1 items-center text-black hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
-              aria-label="Check Cart Valderama's github"
-            >
-              <FaGithub />
-              <span>Github</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/cart-valderama/"
-              target="_blank"
-              className="flex gap-1 items-center text-sky-700 hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
-              aria-label="Check Cart Valderama's linkedin"
-            >
-              <FaLinkedin />
-              <span>LinkedIn</span>
-            </a>
+            <TooltipCustom msg="visit my github">
+              <a
+                href="https://github.com/CartValderama"
+                target="_blank"
+                className="flex gap-1 items-center text-black hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
+                aria-label="Check Cart Valderama's github"
+              >
+                <FaGithub />
+                <span>Github</span>
+              </a>
+            </TooltipCustom>
+
+            <TooltipCustom msg="visit my linkedin">
+              <a
+                href="https://www.linkedin.com/in/cart-valderama/"
+                target="_blank"
+                className="flex gap-1 items-center text-sky-700 hover:text-stone-500 hover:underline transition-all dark:text-[#fcf9ec]"
+                aria-label="Check Cart Valderama's linkedin"
+              >
+                <FaLinkedin />
+                <span>LinkedIn</span>
+              </a>
+            </TooltipCustom>
           </div>
         </motion.div>
         <motion.div
@@ -74,15 +82,17 @@ export default function Contacts() {
           className="p-1"
         >
           <h3 className="">Resume</h3>
-          <a
-            href="/docs/CV_ValderamaCart.pdf"
-            download
-            className="flex gap-1 items-center hover:underline transition-all duration-300"
-            aria-label="Download Cart Valderama's resume as a PDF"
-          >
-            <FaFileDownload />
-            <span aria-label="resume">resume.pdf</span>
-          </a>
+          <TooltipCustom msg="download my cv">
+            <a
+              href="/docs/CV_ValderamaCart.pdf"
+              download
+              className="flex gap-1 items-center hover:underline transition-all duration-300"
+              aria-label="Download Cart Valderama's resume as a PDF"
+            >
+              <FaFileDownload />
+              <span aria-label="resume">resume.pdf</span>
+            </a>
+          </TooltipCustom>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -94,13 +104,15 @@ export default function Contacts() {
         >
           <div className="flex items-baseline gap-x-2">
             <h3 className="">E-mail</h3>
-            <button
-              onClick={() => copyText("email")}
-              className=" hover:text-stone-500 transition"
-              aria-label="copy email cartantonio2000@gmail.com"
-            >
-              <FaRegCopy />
-            </button>
+            <TooltipCustom msg="copy email">
+              <button
+                onClick={() => copyText("email")}
+                className=" hover:text-stone-500 transition"
+                aria-label="copy email cartantonio2000@gmail.com"
+              >
+                <FaRegCopy />
+              </button>
+            </TooltipCustom>
           </div>
 
           <p id="email" className="truncate">

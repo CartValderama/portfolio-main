@@ -2,6 +2,7 @@ import { certificates } from "../../data/staticData";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "../../utils/general-utils";
 import { RxOpenInNewWindow } from "react-icons/rx";
+import TooltipCustom from "../ui/custom/Tooltip";
 
 export default function Certificates() {
   return (
@@ -19,14 +20,15 @@ export default function Certificates() {
           >
             <div className="flex justify-between items-baseline">
               <h3 className="capitalize mr-2 text-base mb-2">{title}</h3>
-              <a
-                href={url}
-                target="_blank"
-                className="flex items-center gap-x-1 hover:underline text-xs capitalize"
-              >
-                <RxOpenInNewWindow />{" "}
-                <span className="hidden lg:block">view</span>
-              </a>
+              <TooltipCustom msg="check certificate">
+                <a
+                  href={url}
+                  target="_blank"
+                  className="flex items-center gap-x-1 transition-colors duration-300 hover:text-stone-400"
+                >
+                  <RxOpenInNewWindow />
+                </a>
+              </TooltipCustom>
             </div>
             <div>
               <p className="text-sm">{from}</p>
