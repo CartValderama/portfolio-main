@@ -5,6 +5,7 @@ import ThemeContextProvider from "./context/theme-context";
 import { Toaster } from "react-hot-toast";
 import Body from "./layouts/Main";
 import ActiveSectionContextProvider from "./context/active-section-context";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             position="bottom-center"
             containerClassName="mb-32 md:mb-0"
           />
+          <Analytics />
           <Header />
           <Body />
           <Footer />
