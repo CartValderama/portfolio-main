@@ -39,7 +39,7 @@ export default function App() {
             style={{ y: planeY, x: planeX, scale: planeScale }}
             aria-hidden
             src="https://i.imgur.com/zebyBvC.png"
-            className="-z-10 w-[16rem] 2xl:w-[20rem] -left-14 top-0 fixed dark:hidden"
+            className="-z-10 w-[16rem] -left-14 top-0 fixed dark:hidden"
             alt="pilot's plane"
           />
           {/* asteroid */}
@@ -56,9 +56,16 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 0.3, scale: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1.5 }}
             aria-hidden
-            className="fixed -z-30 bg-yellow-50 left-[11rem] rounded-full w-[70rem] h-[60rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
+            className="fixed -z-30 bg-red-50 left-[8rem] rounded-full w-[40rem] h-[40rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
+          ></motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.3, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            aria-hidden
+            className="fixed -z-30 bg-amber-50 right-[8rem] top-[16rem] rounded-full w-[40rem] h-[40rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
           ></motion.div>
           <Toaster
             position="bottom-center"
