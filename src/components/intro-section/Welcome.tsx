@@ -13,7 +13,7 @@ const WORD_SPACING = "0.2rem";
 export default function Welcome() {
   return (
     <motion.div
-      className="hidden md:flex col-span-3 justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+      className="hidden md:flex col-span-3 justify-between items-center bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
     >

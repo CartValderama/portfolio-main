@@ -7,12 +7,12 @@ export default function Education() {
   const { ref } = useSectionInView("Education", 0.5);
   return (
     <section
-      className="flex flex-col md:gap-1 scroll-mt-20"
+      className="flex flex-col md:gap-2 scroll-mt-20"
       id="education"
       ref={ref}
     >
       <motion.div
-        className="flex justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+        className="flex justify-between items-center bg-secondary border-y md:border-0 md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -27,7 +27,7 @@ export default function Education() {
         transition={{
           delay: 0.1,
         }}
-        className="flex flex-col col-span-9 md:gap-1"
+        className="flex flex-col col-span-9 md:gap-2"
       >
         <Academic />
         <Certificates />

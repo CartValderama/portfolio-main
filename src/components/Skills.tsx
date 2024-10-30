@@ -26,13 +26,13 @@ export default function Skills() {
 
   return (
     <motion.section
-      className="flex flex-col md:grid grid-cols-3 md:gap-1 scroll-mt-20"
+      className="flex flex-col md:grid grid-cols-3 md:gap-2 scroll-mt-20"
       ref={ref}
       id="skillset"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
-      <h1 className="row-span-1 bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 text-xl sm:text-2xl font-bold uppercase dark:bg-white/10 dark:border-white/5">
+      <h1 className="row-span-1 bg-secondary border-y md:border-0 md:rounded-md py-6 px-8 text-xl sm:text-2xl font-bold uppercase dark:bg-white/10 dark:border-white/5">
         Skills
       </h1>
       <TechStack />

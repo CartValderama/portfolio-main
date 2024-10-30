@@ -9,12 +9,12 @@ export default function Introduction() {
   const { ref } = useSectionInView("Introduction", 0.4);
   return (
     <section
-      className="flex flex-col md:grid md:grid-cols-6 md:gap-1 scroll-mt-20"
+      className="flex flex-col md:grid md:grid-cols-6 md:gap-2 scroll-mt-20"
       id="intro"
       ref={ref}
     >
       <motion.div
-        className="col-span-3 flex justify-between border border-b-0 md:border-b bg-secondary md:rounded-md py-6 px-8  dark:bg-white/10 dark:border-white/5"
+        className="col-span-3 flex justify-between border-y md:border-0 bg-secondary md:rounded-md py-6 px-8  dark:bg-white/10 dark:border-white/5"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
       >

@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function ErrorPage() {
   return (
-    <div className="border flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/10">
+    <div className="border-b md:border-0 flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/10">
       <div className="h-[25rem] flex flex-col justify-center items-center">
         <h2 className="text-center text-2xl uppercase mb-2 w-3/4">
           Something went wrong while fetching data from GitHub

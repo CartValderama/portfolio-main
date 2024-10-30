@@ -4,7 +4,7 @@ import { fadeInAnimationVariants } from "../../utils/general-utils";
 
 export default function Tools() {
   return (
-    <div className="row-span-3 bg-secondary border-b-0 md:border-b border py-6 px-8 flex flex-col md:rounded-md gap-y-6 dark:bg-white/10 dark:border-white/5">
+    <div className="row-span-3 bg-secondary border-b md:border-0 py-6 px-8 flex flex-col md:rounded-md gap-y-6 dark:bg-white/10 dark:border-white/5">
       <h2 className="capitalize text-xl">Tools</h2>
       <ul className="flex md:flex-col flex-wrap gap-4">
         {tools.map(({ tool, icon, svg }, idx) => (

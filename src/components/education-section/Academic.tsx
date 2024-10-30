@@ -11,7 +11,7 @@ export default function Academic() {
   const [isGridLayout, setIsGridLayout] = useState(true);
 
   return (
-    <div className="flex flex-col gap-y-5 border bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10">
+    <div className="flex flex-col gap-y-5 border-b md:border-0 bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10">
       <div className="flex justify-between items-center">
         <h2 className="text-xl">Academic</h2>
         <TooltipCustom msg={isGridLayout ? "show timeline" : "show grid"}>

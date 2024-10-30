@@ -25,12 +25,12 @@ export default function Projects() {
 
   return (
     <section
-      className="flex flex-col md:gap-1 scroll-mt-20"
+      className="flex flex-col md:gap-2 scroll-mt-20"
       id="projects"
       ref={ref}
     >
       <motion.div
-        className="flex justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+        className="flex justify-between items-center bg-secondary border-y md:border-0 md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -45,7 +45,7 @@ export default function Projects() {
       {error && <ErrorPage />}
 
       {!isLoading && repos && !error && (
-        <div className="border flex flex-col bg-secondary md:rounded-md gap-y-5 py-6 px-8 dark:bg-white/10 dark:border-white/10">
+        <div className="border-b md:border-0 flex flex-col bg-secondary md:rounded-md gap-y-5 py-6 px-8 dark:bg-white/10 dark:border-white/10">
           <h2 className="capitalize text-xl">Notable Projects</h2>
           <ProjectContent content={repos} />
           <ProjectNavigation

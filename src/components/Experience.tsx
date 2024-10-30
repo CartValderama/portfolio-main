@@ -8,12 +8,12 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.8);
   return (
     <section
-      className="flex flex-col md:grid grid-cols-12 grid-rows-12 md:gap-1 scroll-mt-20"
+      className="flex flex-col md:grid grid-cols-12 grid-rows-12 md:gap-2 scroll-mt-20"
       id="experience"
       ref={ref}
     >
       <motion.div
-        className="col-span-4 row-span-2 flex justify-between items-center bg-secondary border-b-0 md:border-b border md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+        className="col-span-4 row-span-2 flex justify-between items-center bg-secondary border-y md:border-0 md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -22,7 +22,7 @@ export default function Experience() {
         </h1>
       </motion.div>
       <motion.div
-        className="col-span-8 row-span-12 flex flex-col gap-y-5 border bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10"
+        className="col-span-8 row-span-12 flex flex-col gap-y-5 border-b md:border-0 bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -32,7 +32,7 @@ export default function Experience() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="col-span-4 hidden row-span-10 md:flex flex-col gap-y-5 border bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10"
+        className="col-span-4 hidden row-span-10 md:flex flex-col gap-y-5 border-0 bg-secondary py-6 px-8 md:rounded-md dark:bg-white/10 dark:border-white/10"
         aria-hidden="true"
       >
         <CustomCarousel data={companyList} delay={9000} />

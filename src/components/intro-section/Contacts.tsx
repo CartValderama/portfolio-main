@@ -7,7 +7,7 @@ import TooltipCustom from "../ui/custom/Tooltip";
 export default function Contacts() {
   return (
     <motion.div
-      className="md:rounded-md col-span-2 flex flex-col gap-y-3 bg-secondary border px-8 py-6 dark:bg-white/10 dark:border-white/10"
+      className="md:rounded-md col-span-2 flex flex-col gap-y-3 bg-secondary border-b md:border-0 px-8 py-6 dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
     >

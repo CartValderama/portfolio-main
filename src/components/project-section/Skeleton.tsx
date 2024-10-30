@@ -1,7 +1,7 @@
 export default function Skeleton() {
   return (
     <div
-      className="border flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
+      className="border-b md:border-0 flex flex-col bg-secondary md:rounded-md py-6 px-8 dark:bg-white/10 dark:border-white/5"
       aria-live="polite"
       role="status"
       aria-busy="true"

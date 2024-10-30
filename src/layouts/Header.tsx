@@ -8,8 +8,8 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed md:sticky w-full z-[999] bottom-0 md:top-0 h-[4.5rem] rounded-none border bg-secondary md:bg-opacity-80 text-stone-700 md:shadow-black/[0.10] 
-        md:backdrop-blur-[0.5rem] sm:h-[4rem] sm:rounded-md dark:bg-stone-800 dark:md:bg-stone-700 dark:border-white/5 dark:md:bg-opacity-80"
+      className="fixed md:sticky w-full z-[999] bottom-0 md:top-0 h-[4.5rem] rounded-none shadow-sm bg-secondary md:bg-opacity-80 text-stone-700 md:shadow-black/[0.10] border-t md:border-0
+        md:backdrop-blur-[0.5rem] sm:h-[4rem] md:rounded-md dark:bg-stone-800 dark:md:bg-stone-700 dark:border-white/5 dark:md:bg-opacity-80"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >

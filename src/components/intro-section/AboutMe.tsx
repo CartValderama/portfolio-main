@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 export default function AboutMe() {
   return (
     <motion.div
-      className="col-span-4 md:rounded-md flex flex-col gap-y-4 bg-secondary border border-b-0 md:border-b px-8 py-6 dark:bg-white/10 dark:border-white/10"
+      className="col-span-4 md:rounded-md flex flex-col gap-y-4 bg-secondary border-b md:border-0 px-8 py-6 dark:bg-white/10 dark:border-white/10"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
     >
@@ -30,6 +30,7 @@ export default function AboutMe() {
         </div>
       </motion.div>
       <motion.p
+        className="leading-7"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
