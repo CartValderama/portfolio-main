@@ -15,8 +15,14 @@ export default function App() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const princeY = useTransform(scrollYProgress, [0.8, 0], ["0%", "35%"]);
+
+  const planeY = useTransform(scrollYProgress, [1, 0], ["-100%", "10%"]);
+  const planeX = useTransform(scrollYProgress, [0, 1], ["-100%", "150%"]);
+  const planeScale = useTransform(scrollYProgress, [1, 0], ["0%", "150%"]);
+
   const asteroidY = useTransform(scrollYProgress, [1, 0], ["0%", "100%"]);
+  const asteroidX = useTransform(scrollYProgress, [1, 0], ["-20%", "100%"]);
+  const asteroidScale = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <ThemeContextProvider>
@@ -25,41 +31,34 @@ export default function App() {
           ref={ref}
           className="max-w-4xl sm:mt-2 gap-6 flex m-auto flex-col text-primary dark:text-opacity-85 dark:text-[#fcf9ec] relative"
         >
+          {/* plane */}
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            style={{ y: princeY }}
+            style={{ y: planeY, x: planeX, scale: planeScale }}
             aria-hidden
-            src="https://i.imgur.com/Iduv8pu.png"
-            className="w-[18rem] 2xl:w-[22rem] -right-16 bottom-20 fixed hidden dark:xl:block"
-            alt="little prince"
+            src="https://i.imgur.com/zebyBvC.png"
+            className="-z-10 w-[16rem] 2xl:w-[20rem] -left-14 top-0 fixed dark:hidden"
+            alt="pilot's plane"
           />
+          {/* asteroid */}
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            style={{ y: asteroidY }}
+            style={{ y: asteroidY, x: asteroidX, scale: asteroidScale }}
             aria-hidden
-            src="https://i.imgur.com/nAjE9MK.png"
-            className="w-[18rem] 2xl:w-[20rem] -right-16 bottom-0 fixed hidden dark:xl:block"
+            src="https://i.imgur.com/zzfa7JK.png"
+            className="w-[16rem] 2xl:w-[24rem] -right-14 bottom-0 fixed dark:hidden"
             alt="little prince's asteroid"
           />
-
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.4, scale: 1 }}
-            transition={{ duration: 3 }}
+            animate={{ opacity: 0.3, scale: 1 }}
+            transition={{ duration: 2 }}
             aria-hidden
-            className="fixed -z-30 bg-amber-50 right-[10rem] rounded-full w-[60rem] h-[60rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
-          ></motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.4, scale: 1 }}
-            transition={{ duration: 3 }}
-            aria-hidden
-            className="fixed -z-30 bg-red-50 left-[10rem] rounded-full w-[60rem] h-[60rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
+            className="fixed -z-30 bg-yellow-50 left-[11rem] rounded-full w-[70rem] h-[60rem] blur-3xl dark:bg-slate-100 dark:hidden hidden lg:block"
           ></motion.div>
           <Toaster
             position="bottom-center"
